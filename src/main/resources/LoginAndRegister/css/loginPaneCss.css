@@ -1,0 +1,49 @@
+.root {
+    -fx-background-color: linear-gradient(from 930px 00px to 00px 00px, #ffffff, #EFD9D4),
+    linear-gradient(from 30px 900px to 00px 00px, #EFD9D4, #ffffff);
+    -fx-background-radius: 2px;
+}
+
+.decoration-pane {
+    -fx-background-color: linear-gradient(from 930px 00px to 00px 00px, #EFD9D4, #A95847),
+    linear-gradient(from 30px 900px to 00px 00px, #A95847, #EFD9D4);
+    -fx-background-radius: 2px;
+}
+
+
+.text-field {
+    -fx-font-family: Calibri;
+    -fx-font-size: 16px;
+    -fx-background-radius: 5px;
+    -fx-end-margin: 15px;
+
+}
+
+.label_head {
+    -fx-font-family: Calibri;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.label_nom {
+    -fx-font-family: Calibri;
+    -fx-font-size: 15px;
+    -fx-text-fill: black;
+
+}
+
+.button {
+    -fx-background-radius: 25px;
+    -fx-font-size: 14px;
+    -fx-font-family: "Calibri";
+    -fx-background-color: linear-gradient(from 930px 00px to 00px 00px, #EFD9D4, #A95847),
+    linear-gradient(from 30px 900px to 00px 00px, #A95847, #EFD9D4);
+
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(from 0px 0px to 00px 40px, #EFD9D4, #F7DF45),
+    linear-gradient(from 0px 0px to 10px 30px, #F7DF45, #EFD9D4);
+
+}

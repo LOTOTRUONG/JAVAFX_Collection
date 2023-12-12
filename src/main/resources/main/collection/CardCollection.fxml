@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="box" alignment="CENTER" xmlns="http://javafx.com/javafx/21"
+      fx:controller="main.collection.Controller.CardCollectionController">
+    <children>
+        <ImageView fx:id="iconCollectionImage" fitHeight="95.0" fitWidth="77.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@icon/book.png"/>
+            </image>
+        </ImageView>
+        <Label fx:id="nameCollectionLabel" alignment="CENTER" contentDisplay="CENTER" text="Livres"/>
+    </children>
+</VBox>
