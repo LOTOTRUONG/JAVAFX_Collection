@@ -22,6 +22,7 @@ public class PaneApplicationController implements Initializable {
     @FXML
     private HBox cardLayout;
     private List<TypeObject> recentlyAdded;
+    private PaneNewCollectionController paneNewCollectionController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -73,10 +74,13 @@ public class PaneApplicationController implements Initializable {
     @FXML
     public void enterPersonalPane() {
         try {
-            Parent homeRoot = (new FXMLLoader(getClass().getResource("/main/collection/PaneNewCollection.fxml"))).load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneNewCollection.fxml"));
+            Parent homeRoot = loader.load();
             Stage homeStage = new Stage();
             homeStage.setTitle("New Collection Scene");
             homeStage.setScene(new Scene(homeRoot));
+            //use PaneNewController to PaneNewCollection
+            paneNewCollectionController = loader.getController();
             homeStage.show();
         } catch (Exception exception) {
             exception.printStackTrace();

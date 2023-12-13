@@ -17,7 +17,6 @@ public class CardCollectionController {
         Image image = new Image(getClass().getResourceAsStream(typeObject.getImageSrc()));
         iconCollectionImage.setImage(image);
         nameCollectionLabel.setText(typeObject.getLibelle());
-
     }
 
 }

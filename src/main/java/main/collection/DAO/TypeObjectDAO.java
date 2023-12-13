@@ -2,7 +2,9 @@ package main.collection.DAO;
 
 import main.collection.Metier.TypeObject;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -22,6 +24,7 @@ public class TypeObjectDAO extends DAO<TypeObject, TypeObject, Integer> {
         }
         return null;
     }
+
 
     @Override
     public ArrayList<TypeObject> getAll() {
@@ -56,13 +59,30 @@ public class TypeObjectDAO extends DAO<TypeObject, TypeObject, Integer> {
     }
 
     @Override
-    public boolean insert(TypeObject object) {
-        return false;
+    public boolean insert(TypeObject typeObject) {
+        String insertRequest = "INSERT INTO type_objet (libelle_type) VALUES (?) ";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(insertRequest)) {
+            preparedStatement.setString(1, typeObject.getLibelle());
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+            return false;
+        }
     }
 
     @Override
     public boolean update(TypeObject object) {
-        return false;
+        String sqlRequest = "update type_objet set libelle_type = ? WHERE id_type = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sqlRequest, Statement.RETURN_GENERATED_KEYS)) {
+            preparedStatement.setString(1, object.getLibelle());
+            preparedStatement.setInt(2, object.getId());
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException E) {
+            E.printStackTrace();
+            return false;
+        }
     }
 
     @Override

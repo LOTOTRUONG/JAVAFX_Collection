@@ -1,23 +1,13 @@
 package main.collection.Metier;
 
-public class TypeObject {
+public class Attribut {
 
     private Integer id;
     private String libelle;
-    private String imageSrc;
 
-
-    public TypeObject(Integer id, String libelle) {
+    public Attribut(Integer id, String libelle) {
         this.id = id;
         this.libelle = libelle;
-    }
-
-    public TypeObject(String libelle) {
-        this.libelle = libelle;
-    }
-
-    public TypeObject() {
-
     }
 
     public Integer getId() {
@@ -36,11 +26,4 @@ public class TypeObject {
         this.libelle = libelle;
     }
 
-    public String getImageSrc() {
-        return imageSrc;
-    }
-
-    public void setImageSrc(String imageSrc) {
-        this.imageSrc = imageSrc;
-    }
 }
