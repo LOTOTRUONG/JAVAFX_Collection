@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" minWidth="1280.0" prefHeight="30.0" prefWidth="1280.0"
+            xmlns="http://javafx.com/javafx/21" fx:controller="main.collection.Controller.MenuBarController">
+    <children>
+        <MenuBar fx:id="myMenubar" layoutX="2.0" prefHeight="30.0" prefWidth="1298.0" styleClass="root"
+                 stylesheets="@css/menuBarCss.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0"
+                 AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Fichier">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New"/>
+                        <MenuItem mnemonicParsing="false" text="Open"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem mnemonicParsing="false" text="Save">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="SAVE"/>
+                            </graphic>
+                            <accelerator>
+                                <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP"
+                                                    shortcut="UP"/>
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Save as"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem mnemonicParsing="false" text="Print"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem fx:id="ReturnMain" mnemonicParsing="false" onAction="#exitApplication" text="Quitter">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="CLOSE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Collection">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Add"/>
+                        <MenuItem mnemonicParsing="false" text="Edit"/>
+                        <MenuItem mnemonicParsing="false" text="Copy"/>
+                        <MenuItem mnemonicParsing="false" text="Paste"/>
+                        <MenuItem mnemonicParsing="false" text="Detele"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="View">
+                    <items>
+                        <Menu mnemonicParsing="false" text="Change view">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Icon view"/>
+                                <MenuItem mnemonicParsing="false" text="Table view"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Details">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Infor"/>
+                                <MenuItem mnemonicParsing="false" text="Statistic"/>
+                                <MenuItem mnemonicParsing="false" text="Maps"/>
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="List">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New"/>
+                        <MenuItem mnemonicParsing="false" text="Open"/>
+                        <MenuItem mnemonicParsing="false" text="Rename"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem mnemonicParsing="false" text="Select column"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                        <MenuItem mnemonicParsing="false" text="Remove"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Aide">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="User Manual"/>
+                        <MenuItem mnemonicParsing="false" text="Check for update"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+    <styleClass>
+        <String fx:value="root"/>
+        <String fx:value="menu-bar"/>
+    </styleClass>
+</AnchorPane>

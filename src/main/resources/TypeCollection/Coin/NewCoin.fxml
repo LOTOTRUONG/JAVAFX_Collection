@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="800.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21"
+            fx:controller="TypeCollection.Coin.NewCoinController">
+    <children>
+        <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                 prefHeight="800.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Coin">
+                    <content>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="772.0" minWidth="500.0"
+                                    prefHeight="772.0" prefWidth="500.0">
+                            <children>
+                                <VBox prefHeight="770.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0"
+                                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                      AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TitledPane animated="false" prefHeight="400.0" prefWidth="500.0"
+                                                    text="Generals" VBox.vgrow="ALWAYS">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <GridPane layoutX="50.0" layoutY="50.0" prefHeight="244.0"
+                                                                  prefWidth="419.0" AnchorPane.bottomAnchor="10.0"
+                                                                  AnchorPane.leftAnchor="20.0"
+                                                                  AnchorPane.rightAnchor="20.0"
+                                                                  AnchorPane.topAnchor="10.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                                                   maxWidth="245.0" minWidth="10.0"
+                                                                                   prefWidth="83.0"/>
+                                                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"
+                                                                                   maxWidth="434.0" minWidth="10.0"
+                                                                                   prefWidth="355.0"/>
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="ALWAYS"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Name:"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Region:"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0"
+                                                                       text="Country:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.rowIndex="2" GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Period:"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="3"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Ruler:"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="4"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Value:"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="5"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Year:"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="6"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Type:"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="7"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Series"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="8"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0"
+                                                                       text="Subject:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.rowIndex="9" GridPane.vgrow="ALWAYS"/>
+                                                                <TextField GridPane.columnIndex="1"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="1"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="2"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="3"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="6"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="7"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="8"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="9"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="4"/>
+                                                                <GridPane GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="5">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES"
+                                                                                           maxWidth="150.0"
+                                                                                           minWidth="10.0"
+                                                                                           prefWidth="150.0"/>
+                                                                        <ColumnConstraints hgrow="SOMETIMES"
+                                                                                           maxWidth="147.0"
+                                                                                           minWidth="10.0"
+                                                                                           prefWidth="63.0"/>
+                                                                        <ColumnConstraints hgrow="SOMETIMES"
+                                                                                           maxWidth="144.0"
+                                                                                           minWidth="10.0"
+                                                                                           prefWidth="142.0"/>
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0"
+                                                                                        prefHeight="30.0"
+                                                                                        vgrow="SOMETIMES"/>
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <TextField/>
+                                                                        <TextField GridPane.columnIndex="2"/>
+                                                                        <Label alignment="CENTER"
+                                                                               contentDisplay="CENTER" prefHeight="17.0"
+                                                                               prefWidth="121.0" text="Unit:"
+                                                                               GridPane.columnIndex="1"
+                                                                               GridPane.hgrow="ALWAYS"
+                                                                               GridPane.vgrow="ALWAYS"/>
+                                                                    </children>
+                                                                </GridPane>
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                            <VBox.margin>
+                                                <Insets bottom="20.0" top="10.0"/>
+                                            </VBox.margin>
+                                        </TitledPane>
+                                        <TitledPane animated="false" prefHeight="325.0" prefWidth="500.0" text="Status">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <GridPane layoutX="40.0" layoutY="40.0" prefHeight="263.0"
+                                                                  prefWidth="438.0" AnchorPane.bottomAnchor="6.0"
+                                                                  AnchorPane.leftAnchor="30.0"
+                                                                  AnchorPane.rightAnchor="30.0"
+                                                                  AnchorPane.topAnchor="6.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0"
+                                                                                   minWidth="10.0" prefWidth="103.0"/>
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0"
+                                                                                   minWidth="10.0" prefWidth="335.0"/>
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints maxHeight="31.0" minHeight="0.0"
+                                                                                prefHeight="26.0" vgrow="SOMETIMES"/>
+                                                                <RowConstraints maxHeight="60.0" minHeight="10.0"
+                                                                                prefHeight="41.0" vgrow="SOMETIMES"/>
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Label prefHeight="17.0" prefWidth="105.0"
+                                                                       text="Status:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="105.0" text="Grade:"
+                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"
+                                                                       GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="104.0"
+                                                                       text="Format:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.rowIndex="2" GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="107.0"
+                                                                       text="Condition:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.rowIndex="3" GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="106.0"
+                                                                       text="Quantity:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.rowIndex="4" GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="102.0"
+                                                                       text="Defect:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.rowIndex="5" GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="104.0"
+                                                                       text="Description:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.rowIndex="6" GridPane.vgrow="ALWAYS"/>
+                                                                <TextField GridPane.columnIndex="1"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="1"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="2"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="3"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="4"/>
+                                                                <TextField GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="5"/>
+                                                                <TextField prefHeight="47.0" prefWidth="325.0"
+                                                                           GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="6"/>
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </TitledPane>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Parameters">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                    </content>
+                </Tab>
+                <Tab text="Images">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="150.0" layoutY="125.0" prefHeight="771.0" prefWidth="500.0"
+                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <HBox prefHeight="400.0" prefWidth="500.0">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="BOTTOM"
+                                                       graphicTextGap="5.0" prefHeight="300.0" prefWidth="200.0"
+                                                       text="Photo 1" HBox.hgrow="ALWAYS">
+                                                    <graphic>
+                                                        <ImageView fitHeight="250.0" fitWidth="200.0"
+                                                                   pickOnBounds="true" preserveRatio="true"/>
+                                                    </graphic>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" top="50.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="BOTTOM"
+                                                       graphicTextGap="5.0" prefHeight="300.0" prefWidth="200.0"
+                                                       text="Photo 2" HBox.hgrow="ALWAYS">
+                                                    <graphic>
+                                                        <ImageView fitHeight="250.0" fitWidth="200.0"
+                                                                   pickOnBounds="true" preserveRatio="true"/>
+                                                    </graphic>
+                                                    <HBox.margin>
+                                                        <Insets left="40.0" right="30.0" top="50.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox prefHeight="400.0" prefWidth="500.0">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="BOTTOM"
+                                                       graphicTextGap="5.0" prefHeight="300.0" prefWidth="200.0"
+                                                       text="Photo 3" HBox.hgrow="ALWAYS">
+                                                    <graphic>
+                                                        <ImageView fitHeight="250.0" fitWidth="200.0"
+                                                                   pickOnBounds="true" preserveRatio="true"/>
+                                                    </graphic>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" top="50.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="BOTTOM"
+                                                       graphicTextGap="5.0" prefHeight="300.0" prefWidth="200.0"
+                                                       text="Photo 4" HBox.hgrow="ALWAYS">
+                                                    <graphic>
+                                                        <ImageView fitHeight="250.0" fitWidth="200.0"
+                                                                   pickOnBounds="true" preserveRatio="true"/>
+                                                    </graphic>
+                                                    <HBox.margin>
+                                                        <Insets left="40.0" right="30.0" top="50.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,79 @@
+.root {
+    -fx-background-color: linear-gradient(from 930px 00px to 00px 00px, #ffffff, #EFD9D4),
+    linear-gradient(from 30px 900px to 00px 00px, #EFD9D4, #ffffff);
+    -fx-background-radius: 2px;
+}
+
+.dashboard {
+    -fx-background-color: linear-gradient(from 930px 00px to 00px 00px, #EFD9D4, #A95847),
+    linear-gradient(from 30px 900px to 00px 00px, #A95847, #EFD9D4);
+    -fx-background-radius: 2px;
+}
+
+.text-field {
+    -fx-font-family: Calibri;
+    -fx-font-size: 16px;
+    -fx-background-radius: 5px;
+    -fx-end-margin: 15px;
+
+}
+
+.label_head {
+    -fx-font-family: Calibri;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.label_nom {
+    -fx-font-family: Calibri;
+    -fx-font-size: 15px;
+    -fx-text-fill: black;
+
+}
+
+.button {
+    -fx-background-radius: 10px;
+    -fx-font-size: 14px;
+    -fx-font-family: "Calibri";
+
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(from 0px 0px to 00px 40px, #D3D3D3, #CF9F9F),
+    linear-gradient(from 0px 0px to 10px 30px, #CF9F9F, #D3D3D3)
+}
+
+
+.labelImage {
+    -fx-font-family: Calibri;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-transition: font-size 0.3s;
+}
+
+.labelImage:hover {
+    -fx-font-size: 18px;
+}
+
+.labelImage:pressed {
+    -fx-text-fill: rgb(128, 128, 128);
+}
+
+.labelImage.image-view {
+    -fx-effect: dropshadow(three-pass-box, rgb(128, 128, 128), 0, 0, 10, 0);
+
+    /* fx-effect: dropshadow or innershadow
+    dropshadow(<blur-type>, <color>, <number1>, <number2>,<number3>,<number4>)
+     <blur-type> = [ gaussian | one-pass-box | three-pass-box | two-pass-box ]
+     <color> the shadow color
+     <number1> the radius of shadow blur kernel
+     <number2> the spread of shadow
+     <number3> the shadow offset in x axis, in pixels
+     <number4> the shadow offset in y axis, in pixels*/
+}
+
+
+
+
