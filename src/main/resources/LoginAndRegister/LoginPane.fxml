@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity"
-            prefHeight="400.0" prefWidth="700.0" stylesheets="@css/loginPaneCss.css"
-            xmlns="http://javafx.com/javafx/20.0.1" fx:controller="LoginAndRegister.Controller.LoginController">
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" stylesheets="@css/loginPaneCss.css"
+            xmlns="http://javafx.com/javafx/21" fx:controller="LoginAndRegister.Controller.LoginController">
     <children>
         <SplitPane dividerPositions="0.3424068767908309" maxHeight="-Infinity" maxWidth="-Infinity"
                    minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0"
@@ -37,7 +42,7 @@
                                    preserveRatio="true" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="186.0"
                                    AnchorPane.topAnchor="38.0">
                             <image>
-                                <Image url="@icon/login.png"/>
+                                <Image url="@../icon/login.png"/>
                             </image>
                         </ImageView>
                         <VBox layoutX="81.0" layoutY="134.0" maxHeight="-Infinity" maxWidth="-Infinity"

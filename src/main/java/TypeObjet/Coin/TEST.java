@@ -1,4 +1,4 @@
-package TypeCollection.Book;
+package TypeObjet.Coin;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,12 +16,10 @@ public class TEST extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CollectionApplication.class.getResource("/TypeCollection/Book/BookCollection.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CollectionApplication.class.getResource("/TypeObjet/Coin/CoinCollection.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("TEST!");
         stage.setScene(scene);
         stage.show();
     }
-
 }
-

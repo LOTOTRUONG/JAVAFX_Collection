@@ -1,6 +1,6 @@
-package TypeCollection.Book;
+package TypeObjet.Book;
 
-import TypeCollection.Book.Model.Book;
+import TypeObjet.Book.Model.Book;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;

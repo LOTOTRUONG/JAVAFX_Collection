@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -29,12 +30,54 @@ public class LoginController implements Initializable {
     private Button cancelButton;
     @FXML
     private Circle brandingImageCircle;
+    @FXML
+    private AnchorPane mainPane;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //File brandingFile = new File("/logo/logo.png");
         //Image brandingImage = new Image(brandingFile.toURI().toString());
         //brandingImageCircle.setFill(new ImagePattern(brandingImage));
+    }
+
+
+    public void validateLogin() {
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        Connection connectionDB = DatabaseConnection.getConnection();
+        String email = usernameTextField.getText();
+        String password = enterPasswordField.getText();
+        String verifyLogin = "Select email, password from users where email = '" + email + "'";
+        try {
+            Statement statement = connectionDB.createStatement();
+            ResultSet resultSet = statement.executeQuery(verifyLogin);
+            if (resultSet.next()) {
+                String dbPassword = resultSet.getString("password");
+                if (password.equals(dbPassword)) {
+                    loginMessageLabel.setText("Congratulation! Login successfully");
+                    Stage stage = (Stage) mainPane.getScene().getWindow();
+                    stage.close();
+                    openApplicationCollectionScene();
+                } else {
+                    loginMessageLabel.setText("Invalid login. Please try again");
+                }
+            } else {
+                loginMessageLabel.setText("Invalid login. Please try again");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    private void openApplicationCollectionScene() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/main/collection/PaneApplication.fxml"));
+            Stage applicationCollectionStage = new Stage();
+            applicationCollectionStage.setScene(new Scene(root, 1280, 720));
+            applicationCollectionStage.show();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 
     public void loginButtonOnAction(ActionEvent actionEvent) {
@@ -48,27 +91,6 @@ public class LoginController implements Initializable {
     public void cancelButtonOnAction(ActionEvent actionEvent) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
-    }
-
-    public void validateLogin() {
-        DatabaseConnection databaseConnection = new DatabaseConnection();
-        Connection connectionDB = DatabaseConnection.getConnection();
-        String verifyLogin = "Select count(1) from USER_ACCOUNT where username = '" + usernameTextField.getText() + "'";
-        try {
-            Statement statement = connectionDB.createStatement();
-            ResultSet resultSet = statement.executeQuery(verifyLogin);
-            while (resultSet.next()) {
-                if (resultSet.getInt(1) == 1) {
-                    loginMessageLabel.setText("Congratulation");
-                    // createAccountForm();
-                } else {
-                    loginMessageLabel.setText("Invalid login. Please try again");
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
     }
 
     public void createAccountForm() {

@@ -10,7 +10,7 @@
 <HBox xmlns:fx="http://javafx.com/fxml/1" fx:id="box" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
       minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="260.0" spacing="15.0"
       style="-fx-background-radius: 15;" styleClass="shadow" stylesheets="@bookCss.css"
-      xmlns="http://javafx.com/javafx/21" fx:controller="TypeCollection.Book.CardController">
+      xmlns="http://javafx.com/javafx/21" fx:controller="TypeObjet.Book.CardController">
     <children>
         <ImageView fx:id="bookImage" fitHeight="122.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
             <image>

@@ -1,6 +1,6 @@
-package TypeCollection.Book;
+package TypeObjet.Book;
 
-import TypeCollection.Book.Model.Book;
+import TypeObjet.Book.Model.Book;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -45,7 +45,7 @@ public class BookCollectionController implements Initializable {
             cardLayout.getChildren().clear(); // Clear existing cards
             for (int i = 0; i < recentlyAdded.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/TypeCollection/Book/Card.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/TypeObjet/Book/Card.fxml"));
                 HBox cardbox = fxmlLoader.load();
                 CardController cardController = fxmlLoader.getController();
                 cardController.setData(recentlyAdded.get(i));
@@ -62,13 +62,13 @@ public class BookCollectionController implements Initializable {
         List<Book> ls = new ArrayList<>();
         Book book = new Book();
         book.setName("RICH DAD\nPOOR DAD");
-        book.setImageSrc("/TypeCollection/Book/example/01.rich dad.jpg");
+        book.setImageSrc("/TypeObjet/Book/example/01.rich dad.jpg");
         book.setAuthor("Robert T.Kioyasaki");
         ls.add(book);
 
         book = new Book();
         book.setName("THE WARREN\nBUFFET WAY");
-        book.setImageSrc("/TypeCollection/Book/example/02.the warren.jpg");
+        book.setImageSrc("/TypeObjet/Book/example/02.the warren.jpg");
         book.setAuthor("Robert G.Hagstorm");
         ls.add(book);
         return ls;
