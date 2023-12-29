@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="paneNewCollection" prefHeight="563.0" prefWidth="1000.0"
-            xmlns="http://javafx.com/javafx/21" fx:controller="main.collection.Controller.PaneNewCollectionController">
+            xmlns="http://javafx.com/javafx/21" fx:controller="main.collection.Controller.PaneTypeObjetNewController">
     <children>
         <SplitPane dividerPositions="0.08377896613190731" orientation="VERTICAL" prefHeight="563.0" prefWidth="1000.0"
                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
@@ -15,7 +15,8 @@
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                     <children>
-                        <Label layoutX="429.0" layoutY="8.0" prefHeight="28.0" prefWidth="140.0" text="New Collection">
+                        <Label layoutX="429.0" layoutY="8.0" prefHeight="28.0" prefWidth="185.0"
+                               text="Nouvelle collection">
                             <font>
                                 <Font name="System Bold" size="19.0"/>
                             </font>
@@ -38,9 +39,8 @@
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0"
                                                             prefWidth="100.0">
                                                     <children>
-                                                        <GridPane alignment="CENTER" gridLinesVisible="true"
-                                                                  layoutX="50.0" layoutY="41.0" prefHeight="342.0"
-                                                                  prefWidth="421.0">
+                                                        <GridPane alignment="CENTER" layoutX="50.0" layoutY="41.0"
+                                                                  prefHeight="342.0" prefWidth="421.0">
                                                             <columnConstraints>
                                                                 <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"
                                                                                    maxWidth="205.0" minWidth="10.0"
@@ -60,16 +60,16 @@
                                                             <children>
                                                                 <Label alignment="CENTER" contentDisplay="CENTER"
                                                                        prefHeight="40.0" prefWidth="130.0"
-                                                                       text="Name of Collection:"/>
+                                                                       text="Libelle de Collection:"/>
                                                                 <Label alignment="CENTER" contentDisplay="CENTER"
                                                                        prefHeight="40.0" prefWidth="130.0"
-                                                                       text="Icon of Collection:"
+                                                                       text="Icône de collection:"
                                                                        GridPane.rowIndex="1"/>
                                                                 <Button fx:id="newCollectionButton" alignment="CENTER"
                                                                         contentDisplay="TOP" graphicTextGap="2.0"
                                                                         mnemonicParsing="false"
                                                                         onAction="#setNewCollectionImage"
-                                                                        text="Please choose the image"
+                                                                        text="Veuillez choisir l'image"
                                                                         GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                                     <graphic>
                                                                         <ImageView fx:id="newCollectionImage"
@@ -77,13 +77,13 @@
                                                                                    pickOnBounds="true"
                                                                                    preserveRatio="true">
                                                                             <image>
-                                                                                <Image url="@icon/search.png"/>
+                                                                                <Image url="@../../icon/search.png"/>
                                                                             </image>
                                                                         </ImageView>
                                                                     </graphic>
                                                                 </Button>
                                                                 <TextField fx:id="newCollectionTextField"
-                                                                           promptText="Please enter the new name"
+                                                                           promptText="Veuillez entrer le nouveau nom"
                                                                            GridPane.columnIndex="1"/>
                                                             </children>
                                                         </GridPane>
@@ -92,17 +92,35 @@
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="464.0"
                                                             prefWidth="309.0">
                                                     <children>
-                                                        <Label layoutX="88.0" layoutY="30.0"
-                                                               text="Please choose the attribute in the collection ">
-                                                            <font>
-                                                                <Font size="14.0"/>
-                                                            </font>
-                                                        </Label>
-                                                        <ComboBox fx:id="attributCombobox" layoutX="150.0"
-                                                                  layoutY="75.0" onAction="#addAttributToPane"
-                                                                  prefWidth="150.0"/>
-                                                        <VBox fx:id="attributPane" alignment="CENTER" layoutX="34.0"
-                                                              layoutY="140.0" prefHeight="200.0" prefWidth="382.0"/>
+                                                        <VBox alignment="CENTER" layoutX="34.0" layoutY="139.0"
+                                                              prefHeight="422.0" prefWidth="450.0"
+                                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <children>
+                                                                <Label text="Veuillez choisir l'attribut dans la collection"
+                                                                       VBox.vgrow="ALWAYS">
+                                                                    <font>
+                                                                        <Font size="14.0"/>
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets top="10.0"/>
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <ComboBox fx:id="attributCombobox"
+                                                                          onAction="#addAttributToPane"
+                                                                          prefWidth="150.0" VBox.vgrow="ALWAYS">
+                                                                    <VBox.margin>
+                                                                        <Insets top="10.0"/>
+                                                                    </VBox.margin>
+                                                                </ComboBox>
+                                                                <VBox fx:id="attributVboxPane" prefHeight="200.0"
+                                                                      prefWidth="100.0" VBox.vgrow="ALWAYS">
+                                                                    <VBox.margin>
+                                                                        <Insets top="10.0"/>
+                                                                    </VBox.margin>
+                                                                </VBox>
+                                                            </children>
+                                                        </VBox>
                                                     </children>
                                                 </AnchorPane>
                                             </items>
@@ -115,10 +133,10 @@
                                             <buttons>
                                                 <Button fx:id="saveButton" alignment="CENTER" contentDisplay="CENTER"
                                                         mnemonicParsing="false" onAction="#insertDataIntoTable"
-                                                        text="Add new Collection "/>
-                                                <Button alignment="CENTER" contentDisplay="CENTER"
-                                                        mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0"
-                                                        text="Cancel"/>
+                                                        text="Ajouter"/>
+                                                <Button fx:id="cancelButton" alignment="CENTER" contentDisplay="CENTER"
+                                                        mnemonicParsing="false" onAction="#cancelButton"
+                                                        prefHeight="25.0" prefWidth="133.0" text="Annuler"/>
                                             </buttons>
                                             <padding>
                                                 <Insets right="25.0"/>
