@@ -15,10 +15,10 @@ module main.collection {
     opens LoginAndRegister.Controller to javafx.fxml;
     exports main.collection.Controller;
     opens main.collection.Controller to javafx.fxml;
-    exports TypeCollection.Book;
-    opens TypeCollection.Book to javafx.fxml;
-    exports TypeCollection.Coin;
-    opens TypeCollection.Coin to javafx.fxml;
+    exports TypeObjet.Book;
+    opens TypeObjet.Book to javafx.fxml;
+    exports TypeObjet.Coin;
+    opens TypeObjet.Coin to javafx.fxml;
     exports main.collection.DAO;
     opens main.collection.DAO to javafx.fxml;
 

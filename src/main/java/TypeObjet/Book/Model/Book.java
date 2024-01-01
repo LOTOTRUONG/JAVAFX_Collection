@@ -1,4 +1,4 @@
-package TypeCollection.Book.Model;
+package TypeObjet.Book.Model;
 
 public class Book {
     private String name;

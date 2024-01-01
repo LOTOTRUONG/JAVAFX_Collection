@@ -22,114 +22,115 @@
    <center>
       <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="openHomePane" prefHeight="200.0" prefWidth="200.0" styleClass="root" visible="false"
-                        AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                        AnchorPane.topAnchor="0.0">
-               <children>
-                  <HBox alignment="CENTER" layoutY="130.0" prefHeight="306.0" prefWidth="1137.0"
-                        AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                        AnchorPane.topAnchor="150.0">
-                     <children>
-                        <GridPane prefHeight="306.0" prefWidth="582.0" HBox.hgrow="ALWAYS">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="ALWAYS" maxWidth="225.0" minWidth="10.0" prefWidth="142.0"/>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="473.0" minWidth="10.0" prefWidth="437.0"/>
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                           </rowConstraints>
-                           <children>
-                              <Label prefHeight="17.0" prefWidth="101.0" text="Nom:" GridPane.rowIndex="1"/>
-                              <Label prefHeight="17.0" prefWidth="110.0" text="Prenom:" GridPane.rowIndex="2"/>
-                              <Label prefHeight="17.0" prefWidth="100.0" text="Phone" GridPane.rowIndex="4"/>
-                              <Label prefHeight="17.0" prefWidth="101.0" text="Email:" GridPane.rowIndex="3"/>
-                              <Label prefHeight="17.0" prefWidth="101.0" text="Adresse: " GridPane.rowIndex="5"/>
-                              <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
-                                         GridPane.rowIndex="1"/>
-                              <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
-                                         GridPane.rowIndex="2"/>
-                              <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
-                                         GridPane.rowIndex="3"/>
-                              <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
-                                         GridPane.rowIndex="4"/>
-                              <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
-                                         GridPane.rowIndex="5"/>
-                              <Label prefHeight="27.0" prefWidth="403.0" text="PERSONAL INFORMATION"
-                                     GridPane.columnIndex="1">
-                                 <font>
-                                    <Font name="System Bold" size="18.0"/>
-                                 </font>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="150.0" right="50.0"/>
-                           </HBox.margin>
-                        </GridPane>
-                        <VBox alignment="CENTER" prefHeight="306.0" prefWidth="456.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <Circle fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE"
-                                      VBox.vgrow="ALWAYS">
-                                 <VBox.margin>
-                                    <Insets bottom="20.0"/>
-                                 </VBox.margin>
-                              </Circle>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefWidth="203.0"
-                                      stylesheets="@css/applicationCss.css" text="Change the Avatar"
-                                      VBox.vgrow="ALWAYS"/>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="50.0" right="50.0"/>
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="openCollectionPane" prefHeight="690.0" prefWidth="1137.0" styleClass="root"
-                        stylesheets="@css/applicationCss.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                        AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <VBox alignment="CENTER" layoutX="-2.0" layoutY="-31.0" nodeOrientation="LEFT_TO_RIGHT"
-                        prefHeight="690.0" prefWidth="1137.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                        AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" text="Collection Récemment Ajoutée"
-                               textAlignment="CENTER" VBox.vgrow="ALWAYS">
+             <AnchorPane fx:id="openHomePane" prefHeight="200.0" prefWidth="200.0" styleClass="root" visible="false"
+                         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                         AnchorPane.topAnchor="0.0">
+                 <children>
+                     <HBox alignment="CENTER" layoutY="130.0" prefHeight="306.0" prefWidth="1137.0"
+                           AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                           AnchorPane.topAnchor="150.0">
+                         <children>
+                             <GridPane prefHeight="306.0" prefWidth="582.0" HBox.hgrow="ALWAYS">
+                                 <columnConstraints>
+                                     <ColumnConstraints hgrow="ALWAYS" maxWidth="225.0" minWidth="10.0"
+                                                        prefWidth="142.0"/>
+                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="473.0" minWidth="10.0"
+                                                        prefWidth="437.0"/>
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                 </rowConstraints>
+                                 <children>
+                                     <Label prefHeight="17.0" prefWidth="101.0" text="Nom:" GridPane.rowIndex="1"/>
+                                     <Label prefHeight="17.0" prefWidth="110.0" text="Prenom:" GridPane.rowIndex="2"/>
+                                     <Label prefHeight="17.0" prefWidth="100.0" text="Phone" GridPane.rowIndex="4"/>
+                                     <Label prefHeight="17.0" prefWidth="101.0" text="Email:" GridPane.rowIndex="3"/>
+                                     <Label prefHeight="17.0" prefWidth="101.0" text="Adresse: " GridPane.rowIndex="5"/>
+                                     <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
+                                                GridPane.rowIndex="1"/>
+                                     <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
+                                                GridPane.rowIndex="2"/>
+                                     <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
+                                                GridPane.rowIndex="3"/>
+                                     <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
+                                                GridPane.rowIndex="4"/>
+                                     <TextField prefHeight="24.0" prefWidth="200.0" GridPane.columnIndex="1"
+                                                GridPane.rowIndex="5"/>
+                                     <Label prefHeight="27.0" prefWidth="403.0" text="PERSONAL INFORMATION"
+                                            GridPane.columnIndex="1">
+                                         <font>
+                                             <Font name="System Bold" size="18.0"/>
+                                         </font>
+                                     </Label>
+                                 </children>
+                                 <HBox.margin>
+                                     <Insets left="150.0" right="50.0"/>
+                                 </HBox.margin>
+                             </GridPane>
+                             <VBox alignment="CENTER" prefHeight="306.0" prefWidth="456.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                     <Circle fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE"
+                                             VBox.vgrow="ALWAYS">
+                                         <VBox.margin>
+                                             <Insets bottom="20.0"/>
+                                         </VBox.margin>
+                                     </Circle>
+                                     <Button alignment="CENTER" mnemonicParsing="false" prefWidth="203.0"
+                                             stylesheets="@css/applicationCss.css" text="Change the Avatar"
+                                             VBox.vgrow="ALWAYS"/>
+                                 </children>
+                                 <HBox.margin>
+                                     <Insets left="50.0" right="50.0"/>
+                                 </HBox.margin>
+                             </VBox>
+                         </children>
+                     </HBox>
+                 </children>
+             </AnchorPane>
+             <AnchorPane fx:id="openCollectionPane" prefHeight="690.0" prefWidth="1137.0" styleClass="root"
+                         stylesheets="@css/applicationCss.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                         AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                 <children>
+                     <VBox alignment="CENTER" layoutX="-2.0" layoutY="-31.0" nodeOrientation="LEFT_TO_RIGHT"
+                           prefHeight="690.0" prefWidth="1137.0" AnchorPane.bottomAnchor="0.0"
+                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+                         <children>
+                             <Label alignment="CENTER" contentDisplay="CENTER" text="Collection Récemment Ajoutée"
+                                    textAlignment="CENTER" VBox.vgrow="ALWAYS">
                            <font>
-                              <Font name="System Bold" size="26.0"/>
+                               <Font name="System Bold" size="26.0"/>
                            </font>
                            <VBox.margin>
-                              <Insets bottom="10.0" top="10.0"/>
+                               <Insets bottom="10.0" top="10.0"/>
                            </VBox.margin>
                         </Label>
-                        <VBox fx:id="mainVbox" alignment="CENTER" prefHeight="502.0" prefWidth="1137.0"
-                              VBox.vgrow="ALWAYS"/>
-                        <HBox alignment="CENTER" fillHeight="false" prefHeight="51.0" prefWidth="1137.0"
-                              VBox.vgrow="ALWAYS">
+                             <VBox fx:id="mainVbox" alignment="CENTER" prefHeight="502.0" prefWidth="1137.0"
+                                   VBox.vgrow="ALWAYS"/>
+                             <HBox alignment="CENTER" fillHeight="false" prefHeight="51.0" prefWidth="1137.0"
+                                   VBox.vgrow="ALWAYS">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#enterNewTypePane"
-                                      text="Nouveau" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets right="20.0"/>
-                                 </HBox.margin>
-                              </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#enterModifyScene"
-                                      text="Modifier" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets right="20.0"/>
-                                 </HBox.margin>
-                              </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" text="Supprimer" HBox.hgrow="ALWAYS"/>
+                               <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#enterNewTypePane"
+                                       prefHeight="27.0" prefWidth="119.0" text="Ajouter" HBox.hgrow="ALWAYS">
+                                   <HBox.margin>
+                                       <Insets right="20.0"/>
+                                   </HBox.margin>
+                               </Button>
+                               <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#enterModifyScene"
+                                       prefHeight="27.0" prefWidth="111.0" text="Modifier" HBox.hgrow="ALWAYS">
+                                   <HBox.margin>
+                                       <Insets right="20.0"/>
+                                   </HBox.margin>
+                               </Button>
                            </children>
-                           <VBox.margin>
-                              <Insets/>
-                           </VBox.margin>
-                        </HBox>
+                                 <VBox.margin>
+                                     <Insets/>
+                                 </VBox.margin>
+                             </HBox>
                      </children>
                   </VBox>
                </children>
@@ -138,54 +139,54 @@
       </AnchorPane>
    </center>
    <top>
-      <fx:include source="MenuBar.fxml"/>
+       <fx:include source="MenuBar.fxml"/>
    </top>
    <left>
-      <AnchorPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="690.0" prefWidth="143.0" BorderPane.alignment="CENTER">
+       <AnchorPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="690.0" prefWidth="143.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="690.0" prefWidth="150.0" styleClass="dashboard"
-                        stylesheets="@css/applicationCss.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                        AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+             <AnchorPane prefHeight="690.0" prefWidth="150.0" styleClass="dashboard"
+                         stylesheets="@css/applicationCss.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                         AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label fx:id="homeLabel" alignment="CENTER" contentDisplay="TOP" graphicTextGap="2.0" layoutX="22.0"
-                         layoutY="42.0" onMouseClicked="#setOpenHomePane" prefHeight="100.0" prefWidth="100.0"
-                         styleClass="labelImage" stylesheets="@css/applicationCss.css" text="Acceuil">
+                   <Label fx:id="homeLabel" alignment="CENTER" contentDisplay="TOP" graphicTextGap="2.0" layoutX="22.0"
+                          layoutY="42.0" onMouseClicked="#setOpenHomePane" prefHeight="100.0" prefWidth="100.0"
+                          styleClass="labelImage" stylesheets="@css/applicationCss.css" text="Acceuil">
                      <graphic>
-                        <ImageView fx:id="homeImage" fitHeight="73.0" fitWidth="58.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                         <ImageView fx:id="homeImage" fitHeight="73.0" fitWidth="58.0" pickOnBounds="true"
+                                    preserveRatio="true">
                            <image>
-                              <Image url="@../../icon/acceuil128.png"/>
+                               <Image url="@../../icon/acceuil128.png"/>
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font name="System Bold" size="12.0"/>
+                         <Font name="System Bold" size="12.0"/>
                      </font>
                   </Label>
-                  <Label fx:id="collectionLabel" alignment="CENTER" contentDisplay="TOP" graphicTextGap="2.0"
-                         layoutX="22.0" layoutY="177.0" onMouseClicked="#setOpenCollectionPane" prefHeight="100.0"
-                         prefWidth="100.0" styleClass="labelImage" stylesheets="@css/applicationCss.css"
-                         text="Collection">
+                   <Label fx:id="collectionLabel" alignment="CENTER" contentDisplay="TOP" graphicTextGap="2.0"
+                          layoutX="22.0" layoutY="177.0" onMouseClicked="#setOpenCollectionPane" prefHeight="100.0"
+                          prefWidth="100.0" styleClass="labelImage" stylesheets="@css/applicationCss.css"
+                          text="Collection">
                      <graphic>
-                        <ImageView fx:id="collectionImage" fitHeight="67.0" fitWidth="59.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                         <ImageView fx:id="collectionImage" fitHeight="67.0" fitWidth="59.0" pickOnBounds="true"
+                                    preserveRatio="true">
                            <image>
-                              <Image url="@../../icon/collection.png"/>
+                               <Image url="@../../icon/collection.png"/>
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font name="System Bold" size="12.0"/>
+                         <Font name="System Bold" size="12.0"/>
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="16.0" layoutY="607.0"
-                         onMouseClicked="#exitApplication" prefHeight="69.0" prefWidth="108.0" styleClass="labelImage"
-                         text="Se déconnecter" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="16.0"
-                         AnchorPane.rightAnchor="19.0">
+                   <Label alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" layoutX="16.0" layoutY="607.0"
+                          onMouseClicked="#exitApplication" prefHeight="69.0" prefWidth="108.0" styleClass="labelImage"
+                          text="Se déconnecter" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="16.0"
+                          AnchorPane.rightAnchor="19.0">
                      <graphic>
                         <ImageView fitHeight="46.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../icon/exit94.png"/>
+                               <Image url="@../../icon/exit94.png"/>
                            </image>
                         </ImageView>
                      </graphic>

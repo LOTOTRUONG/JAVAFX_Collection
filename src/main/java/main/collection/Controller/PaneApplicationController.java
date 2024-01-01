@@ -3,12 +3,18 @@ package main.collection.Controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main.collection.DAO.TypeObjectDAO;
 import main.collection.Metier.TypeObject;
 
 import java.net.URL;
@@ -16,26 +22,36 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class PaneApplicationController implements Initializable {
+public class PaneApplicationController implements Initializable, ModificationSceneCallBack {
     @FXML
     private AnchorPane openCollectionPane, openHomePane;
-    @FXML
-    private HBox cardLayout;
     private List<TypeObject> recentlyAdded;
-    private PaneNewCollectionController paneNewCollectionController;
+    private PaneTypeObjetNewController paneNewTypeObjetController;
+    private PaneTypeObjetModifyController paneTypeObjetModifyController;
+    @FXML
+    private VBox mainVbox;
+    private TypeObjectDAO typeObjectDAO;
+    private ModificationSceneCallBack paneTypeObjetModifyControllerCallback;
 
+
+    public PaneApplicationController() {
+        this.typeObjectDAO = new TypeObjectDAO();
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        recentlyAdded = new ArrayList<>();
         setOpenHomePane();
     }
 
+    public void setCallback(ModificationSceneCallBack callback) {
+        this.paneTypeObjetModifyControllerCallback = callback;
+    }
     @FXML
     private void setOpenHomePane() {
         openHomePane.setVisible(true);
         openCollectionPane.setVisible(false);
 
     }
-
     @FXML
     private void setOpenCollectionPane() {
         openHomePane.setVisible(false);
@@ -44,77 +60,109 @@ public class PaneApplicationController implements Initializable {
 
     }
 
-    @FXML
-    public void enterCollectionLivres() {
+    public void showRecentAddedCollection() {
         try {
-            Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeCollection/Book/BookCollection.fxml"))).load();
-            Stage homeStage = new Stage();
-            homeStage.setTitle("Book Scene");
-            homeStage.setScene(new Scene(homeRoot));
-            homeStage.show();
+            mainVbox.getChildren().clear(); // Clear existing cards
+            List<TypeObject> typeObjects = typeObjectDAO.getAll();
+
+            HBox currentRow = new HBox();
+            currentRow.setAlignment(Pos.CENTER);
+            currentRow.setSpacing(50); // Spacing between VBox nodes
+
+            for (TypeObject typeObject : typeObjects) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/main/collection/CardTypeObjet.fxml"));
+                VBox cardbox = fxmlLoader.load();
+                CardTypeObjetController cardTypeObjetController = fxmlLoader.getController();
+                cardTypeObjetController.setData(typeObject);
+                cardbox.setOnMouseClicked(event -> handleVBoxClick(typeObject));
+                currentRow.getChildren().add(cardbox);
+
+                // If reach the maximum number of VBoxes per row, start a new row
+                if (currentRow.getChildren().size() == 4) {
+                    mainVbox.getChildren().add(currentRow);
+                    currentRow = new HBox();
+                    currentRow.setAlignment(Pos.CENTER);
+                    currentRow.setSpacing(30);
+                }
+            }
+            // Add any remaining VBoxes to the flowPane
+            if (!currentRow.getChildren().isEmpty()) {
+                mainVbox.getChildren().add(currentRow);
+            }
+            mainVbox.setSpacing(30);
+            mainVbox.setAlignment(Pos.CENTER);
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
     }
 
-    @FXML
-    public void enterCollectionCoin() {
-        try {
-            Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeCollection/Coin/CoinCollection.fxml"))).load();
-            Stage homeStage = new Stage();
-            homeStage.setTitle("Coin Scene");
-            homeStage.setScene(new Scene(homeRoot));
-            homeStage.show();
-        } catch (Exception exception) {
-            exception.printStackTrace();
+    private void handleVBoxClick(TypeObject typeObject) {
+        if ("pièce".equalsIgnoreCase(typeObject.getLibelle())) {
+            try {
+                Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeObjet/Coin/CoinCollection.fxml"))).load();
+                Stage homeStage = new Stage();
+                homeStage.setTitle("Coin Scene");
+                homeStage.setScene(new Scene(homeRoot));
+                homeStage.show();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        } else if ("billet".equalsIgnoreCase(typeObject.getLibelle())) {
+            try {
+                Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeObjet/Book/BookCollection.fxml"))).load();
+                Stage homeStage = new Stage();
+                homeStage.setTitle("Book Scene");
+                homeStage.setScene(new Scene(homeRoot));
+                homeStage.show();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
         }
     }
 
     @FXML
-    public void enterPersonalPane() {
+    public void enterNewTypePane() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneNewCollection.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneTypeObjetNew.fxml"));
             Parent homeRoot = loader.load();
             Stage homeStage = new Stage();
-            homeStage.setTitle("New Collection Scene");
+            homeStage.setTitle("New Type Scene");
             homeStage.setScene(new Scene(homeRoot));
-            //use PaneNewController to PaneNewCollection
-            paneNewCollectionController = loader.getController();
-            homeStage.show();
+            paneNewTypeObjetController = loader.getController();
+            homeStage.showAndWait();
+
         } catch (Exception exception) {
             exception.printStackTrace();
         }
 
     }
 
-    public void showRecentAddedCollection() {
-        recentlyAdded = getRecentlyAdded();
-        cardLayout.getChildren().clear();
-        recentlyAdded = new ArrayList<>(getRecentlyAdded());
+    @FXML
+    public void enterModifyScene() {
         try {
-            cardLayout.getChildren().clear(); // Clear existing cards
-            for (int i = 0; i < recentlyAdded.size(); i++) {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/main/collection/CardCollection.fxml"));
-                VBox cardbox = fxmlLoader.load();
-                CardCollectionController cardCollectionController = fxmlLoader.getController();
-                cardCollectionController.setData(recentlyAdded.get(i));
-                cardLayout.getChildren().add(cardbox);
-            }
-
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneTypeObjetModify.fxml"));
+            Parent homeRoot = loader.load();
+            Stage homeStage = new Stage();
+            homeStage.setTitle("Modify Type Scene");
+            homeStage.setScene(new Scene(homeRoot));
+            paneTypeObjetModifyController = loader.getController();
+            paneTypeObjetModifyController.setCallback(this); // Set the callback
+            homeStage.showAndWait();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
 
-    private List<TypeObject> getRecentlyAdded() {
-        List<TypeObject> listTypeObjet = new ArrayList<>();
-        TypeObject typeObject = new TypeObject();
-        typeObject.setLibelle("Billet");
-        typeObject.setImageSrc("/TypeCollection/Book/example/02.the warren.jpg");
-        listTypeObjet.add(typeObject);
-        return listTypeObjet;
+    public void exitApplication(MouseEvent actionEvent) {
+        Node sourcenode = (Node) actionEvent.getSource();
+        Scene scene = sourcenode.getScene();
+        Stage stage = (Stage) scene.getWindow();
+        stage.close();
+
     }
 
+    public void onModificationSceneClosed() {
+        showRecentAddedCollection();
+    }
 }

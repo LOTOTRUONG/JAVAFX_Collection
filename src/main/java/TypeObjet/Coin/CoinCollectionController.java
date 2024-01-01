@@ -1,10 +1,11 @@
-package TypeCollection.Coin;
+package TypeObjet.Coin;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -50,7 +51,7 @@ public class CoinCollectionController implements Initializable {
     @FXML
     public void addNewCoin() {
         try {
-            Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeCollection/Coin/NewCoin.fxml"))).load();
+            Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeObjet/Coin/Coin.fxml"))).load();
             Stage homeStage = new Stage();
             homeStage.setTitle("New Coin Scene");
             homeStage.setScene(new Scene(homeRoot));
