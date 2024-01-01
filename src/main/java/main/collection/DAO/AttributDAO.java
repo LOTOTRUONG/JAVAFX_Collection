@@ -4,6 +4,7 @@ import main.collection.Metier.Attribut;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -60,6 +61,14 @@ public class AttributDAO extends DAO<Attribut, Attribut, Integer> {
 
     @Override
     public boolean delete(Attribut object) {
-        return false;
+        String deleteRequest = "DELETE FROM attribut WHERE id_attribut = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteRequest)) {
+            preparedStatement.setInt(1, object.getId());
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+            return false;
+        }
     }
 }
