@@ -3,14 +3,12 @@ package main.collection.Controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -30,7 +28,7 @@ public class PaneApplicationController implements Initializable, ModificationSce
     private PaneTypeObjetModifyController paneTypeObjetModifyController;
     @FXML
     private VBox mainVbox;
-    private TypeObjectDAO typeObjectDAO;
+    private final TypeObjectDAO typeObjectDAO;
     private ModificationSceneCallBack paneTypeObjetModifyControllerCallback;
 
 
@@ -40,7 +38,7 @@ public class PaneApplicationController implements Initializable, ModificationSce
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         recentlyAdded = new ArrayList<>();
-        setOpenHomePane();
+        setOpenCollectionPane();
     }
 
     public void setCallback(ModificationSceneCallBack callback) {
@@ -102,7 +100,7 @@ public class PaneApplicationController implements Initializable, ModificationSce
             try {
                 Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeObjet/Coin/CoinCollection.fxml"))).load();
                 Stage homeStage = new Stage();
-                homeStage.setTitle("Coin Scene");
+                homeStage.setTitle("Piece Scene");
                 homeStage.setScene(new Scene(homeRoot));
                 homeStage.show();
             } catch (Exception exception) {
@@ -112,7 +110,7 @@ public class PaneApplicationController implements Initializable, ModificationSce
             try {
                 Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeObjet/Book/BookCollection.fxml"))).load();
                 Stage homeStage = new Stage();
-                homeStage.setTitle("Book Scene");
+                homeStage.setTitle("Livre Scene");
                 homeStage.setScene(new Scene(homeRoot));
                 homeStage.show();
             } catch (Exception exception) {
@@ -130,6 +128,7 @@ public class PaneApplicationController implements Initializable, ModificationSce
             homeStage.setTitle("New Type Scene");
             homeStage.setScene(new Scene(homeRoot));
             paneNewTypeObjetController = loader.getController();
+            paneNewTypeObjetController.setCallback(this);
             homeStage.showAndWait();
 
         } catch (Exception exception) {

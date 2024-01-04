@@ -1,4 +1,4 @@
 package main.collection.Service;
 
-public class Ajouter {
+public class AttributSearch {
 }

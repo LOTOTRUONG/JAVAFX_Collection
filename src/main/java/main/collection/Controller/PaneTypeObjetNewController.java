@@ -2,14 +2,14 @@ package main.collection.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import main.collection.DAO.AttributDAO;
@@ -73,7 +73,7 @@ public class PaneTypeObjetNewController {
     public void insertDataIntoTable() {
         try {
             String libelle = newCollectionTextField.getText().trim();
-            String imagePath = newCollectionImage.getImage().getUrl().toString();
+            String imagePath = newCollectionImage.getImage().getUrl();
             if (libelle.isEmpty() || imagePath.isEmpty()) {
                 showAlert("Error", "Please provide both the collection name and image.");
                 return;
@@ -141,23 +141,20 @@ public class PaneTypeObjetNewController {
         HBox newAttributHbox = new HBox(); // Create a new HBox for each attribut item
         newAttributHbox.getStyleClass().add("");
         newAttributHbox.setAlignment(Pos.CENTER);
+        newAttributHbox.setSpacing(20);
+        newAttributHbox.setPadding(new Insets(20, 0, 0, 0));
+
         Label attributLabel = new Label(attributName);
+        attributLabel.setPadding(new Insets(0, 5, 0, 0));
         Button removeButton = new Button("x");
         removeButton.setOnAction(event -> removeAttributFromPane(attributName));
         HBox labelAndButtonContainer = new HBox();
         labelAndButtonContainer.setAlignment(Pos.CENTER);
+        labelAndButtonContainer.setPadding(new Insets(2, 2, 2, 2));
+        labelAndButtonContainer.setBorder(new Border(new BorderStroke(Color.GREEN, BorderStrokeStyle.SOLID, new CornerRadii(10), null)));
         labelAndButtonContainer.getChildren().addAll(attributLabel, removeButton);
 
-        //Check if current row already has 3 elements
-        if (newAttributHbox.getChildren().size() < 3) {
-            newAttributHbox.getChildren().add(labelAndButtonContainer);
-        } else {
-            //Start a new row
-            newAttributHbox = new HBox();
-            newAttributHbox.getStyleClass().add("");
-            newAttributHbox.setAlignment(Pos.CENTER);
-            newAttributHbox.getChildren().add(labelAndButtonContainer);
-        }
+        newAttributHbox.getChildren().add(labelAndButtonContainer);
         return newAttributHbox;
     }
 

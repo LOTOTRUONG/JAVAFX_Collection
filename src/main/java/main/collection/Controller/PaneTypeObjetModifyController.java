@@ -5,15 +5,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import main.collection.DAO.PhotoDAO;
 import main.collection.DAO.TypeObjectDAO;
+import main.collection.Metier.Attribut;
 import main.collection.Metier.Photo;
 import main.collection.Metier.TypeObject;
 
@@ -21,6 +26,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class PaneTypeObjetModifyController implements Initializable {
 
@@ -30,18 +36,19 @@ public class PaneTypeObjetModifyController implements Initializable {
     public TextField modifyCollectionTextField;
     @FXML
     public ScrollPane scrollPane;
-    private TypeObjectDAO typeObjectDAO = new TypeObjectDAO();
-    private PhotoDAO photoDAO = new PhotoDAO();
+    private final TypeObjectDAO typeObjectDAO = new TypeObjectDAO();
+    private final PhotoDAO photoDAO = new PhotoDAO();
     private TypeObject selectedTypeObject;
     private ModificationSceneCallBack paneTypeObjetModifyControllerCallback;
+
     @FXML
-    private VBox attributVboxPane;
+    private ListView<Attribut> attributListView;
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadDatafromDatabase();
-
     }
 
     public void setCallback(ModificationSceneCallBack callback) {
@@ -72,6 +79,7 @@ public class PaneTypeObjetModifyController implements Initializable {
         }
     }
 
+    //click on the type object --> to see detail
     private void handleCardClick(TypeObject typeObject) {
         selectedTypeObject = typeObject;
         // Set modifyCollectionTextField to the text of the clicked card
@@ -89,6 +97,7 @@ public class PaneTypeObjetModifyController implements Initializable {
         loadAttributsForTypeObject(typeObject);
     }
 
+    //change the image of type of object
     public void setModifyCollectionImage() {
         FileChooser fileChooser = new FileChooser();
         //set extension
@@ -109,7 +118,7 @@ public class PaneTypeObjetModifyController implements Initializable {
                     if (imageId != -1) {
                         Photo photo = new Photo();
                         photo.setId(imageId);
-                        photo.setImagePath(modifyCollectionImage.getImage().getUrl().toString());
+                        photo.setImagePath(modifyCollectionImage.getImage().getUrl());
                         photoDAO.update(photo);
                     }
                 }
@@ -120,31 +129,84 @@ public class PaneTypeObjetModifyController implements Initializable {
         }
     }
 
+    //load list attributes linked with type of object
+
     private void loadAttributsForTypeObject(TypeObject typeObject) {
-        attributVboxPane.getChildren().clear();
+        attributListView.getItems().clear();
         List<String> attributs = typeObjectDAO.getAttributsByTypeObjectId(typeObject);
         for (String attribut : attributs) {
-            Label attributLabel = new Label(attribut);
-            attributVboxPane.getChildren().add(attributLabel);
+            Attribut attributObject = new Attribut(attribut); // Assuming Attribut has a constructor that takes a String
+            attributListView.getItems().add(attributObject);
+        }
+        attributListView.setCellFactory(param -> new ListCell<Attribut>() {
+            @Override
+            protected void updateItem(Attribut attribut, boolean empty) {
+                super.updateItem(attribut, empty);
+                if (empty || attribut == null) {
+                    setText(null);
+                } else {
+                    setText(attribut.getLibelle());
+                    setTextAlignment(TextAlignment.CENTER);
+                    setAlignment(Pos.CENTER);
+                }
+            }
+        });
+    }
+
+
+    //modify the list of attribut
+    public void openModifyAttribut() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneAttributModify.fxml"));
+            Parent homeRoot = loader.load();
+            PaneAttributModify attributModifyController = loader.getController();
+            List<String> libelleList = attributListView.getItems().stream().map(Attribut::getLibelle).collect(Collectors.toList());
+            attributModifyController.setAttributList(libelleList);
+            Stage homeStage = new Stage();
+            homeStage.setTitle("Modify Attribute Scene");
+            homeStage.setScene(new Scene(homeRoot));
+            homeStage.show();
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
     }
 
-    public void saveChange(ActionEvent actionEvent) {
+    public void openAjouterAttribut() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneAttributAjouter.fxml"));
+            Parent homeRoot = loader.load();
+            //access controller
+            PaneAttributAjouter paneAttributAjouter = loader.getController();
+            paneAttributAjouter.setParentController(this);
+            Stage homeStage = new Stage();
+            homeStage.setTitle("Ajouter Attribute Scene");
+            homeStage.setScene(new Scene(homeRoot));
+            homeStage.show();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    public void addNewAttribute(Attribut newAttribut) {
+        attributListView.getItems().add(newAttribut);
+    }
+
+    //button with function: save, delete and cancel
+    public void saveChange() {
         if (selectedTypeObject != null) {
             // Save the changes to the libelle_type in the typeObjectDAO
             selectedTypeObject.setLibelle(modifyCollectionTextField.getText());
             typeObjectDAO.update(selectedTypeObject);
         }
         showAlert("Success", "Changes saved successfully");
-        Stage stage = (Stage) modifyCollectionTextField.getScene().getWindow();
-        stage.close();
+
         // Trigger the update of the collection view in the main controller
         if (paneTypeObjetModifyControllerCallback != null) {
             paneTypeObjetModifyControllerCallback.onModificationSceneClosed();
         }
     }
 
-    public void deleteTypeObjet(ActionEvent actionEvent) {
+    public void deleteTypeObjet() {
         if (selectedTypeObject != null) {
             // Delete the TypeObject
             if (typeObjectDAO.delete(selectedTypeObject)) {
@@ -168,23 +230,19 @@ public class PaneTypeObjetModifyController implements Initializable {
             // Trigger the update of the collection view in the main controller
             if (paneTypeObjetModifyControllerCallback != null) {
                 paneTypeObjetModifyControllerCallback.onModificationSceneClosed();
+                Stage stage = (Stage) modifyCollectionTextField.getScene().getWindow();
+                stage.close();
             }
-
-            // Close the stage
-            Stage stage = (Stage) modifyCollectionTextField.getScene().getWindow();
-            stage.close();
         } else {
             showAlert("Error", "No TypeObject selected for deletion");
         }
     }
-
 
     public void cancelButton(ActionEvent actionEvent) {
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
-
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(title);

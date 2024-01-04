@@ -196,4 +196,32 @@ public class TypeObjectDAO extends DAO<TypeObject, TypeObject, Integer> {
     }
 
 
+    public List<String> deteteAttributsByTypeObjectId(TypeObject typeObject) {
+        List<String> deletedAttributs = new ArrayList<>();
+        if (typeObject != null) {
+            int idType = typeObject.getId(); // Assuming you have a method getId() in your TypeObject class
+            String sqlRequest = "SELECT attribut.libelle_attribut FROM type_objet " +
+                    "FULL JOIN attribut_type ON attribut_type.id_type = type_objet.id_type " +
+                    "FULL JOIN attribut ON attribut.id_attribut = attribut_type.id_attribut " +
+                    "WHERE type_objet.id_type = ?";
+
+            String deleteRequest = "DELETE FROM attribut_type Where id_attribut = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sqlRequest);
+                 PreparedStatement deleteStatement = connection.prepareStatement(deleteRequest)) {
+                //Select attribut before deletion
+                preparedStatement.setInt(1, idType);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    deletedAttributs.add(resultSet.getString("libelle_attribut"));
+                }
+
+                //delete attributs based on the id_type and id_attribut
+                deleteStatement.setInt(1, idType);
+                deleteStatement.executeUpdate();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+        }
+        return deletedAttributs;
+    }
 }
