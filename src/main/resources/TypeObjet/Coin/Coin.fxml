@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TitledPane?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-
-
+<?import javafx.scene.layout.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity"
       minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="500.0"
       xmlns="http://javafx.com/javafx/21" fx:controller="TypeObjet.Coin.NewCoinController">
@@ -32,7 +20,7 @@
                                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                                       AnchorPane.topAnchor="0.0">
                                     <children>
-                                        <TitledPane animated="false" prefHeight="400.0" prefWidth="500.0"
+                                        <TitledPane animated="false" prefHeight="743.0" prefWidth="500.0"
                                                     text="Generals" VBox.vgrow="ALWAYS">
                                             <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
@@ -54,9 +42,13 @@
                                                             <rowConstraints>
                                                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
                                                                                 vgrow="ALWAYS"/>
-                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                <RowConstraints maxHeight="77.39999237060547"
+                                                                                minHeight="10.0"
+                                                                                prefHeight="69.39999237060547"
                                                                                 vgrow="SOMETIMES"/>
-                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                <RowConstraints maxHeight="66.5999969482422"
+                                                                                minHeight="10.0"
+                                                                                prefHeight="31.400007629394537"
                                                                                 vgrow="SOMETIMES"/>
                                                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
                                                                                 vgrow="SOMETIMES"/>
@@ -74,34 +66,34 @@
                                                                                 vgrow="SOMETIMES"/>
                                                             </rowConstraints>
                                                             <children>
-                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Name:"
-                                                                       GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Region:"
-                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"
+                                                                <Label prefHeight="17.0" prefWidth="83.0"
+                                                                       text="Libelle:" GridPane.hgrow="ALWAYS"
                                                                        GridPane.vgrow="ALWAYS"/>
                                                                 <Label prefHeight="17.0" prefWidth="83.0"
-                                                                       text="Country:" GridPane.hgrow="ALWAYS"
+                                                                       text="Emitteur: " GridPane.rowIndex="1"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0"
+                                                                       text="Continent:" GridPane.hgrow="ALWAYS"
                                                                        GridPane.rowIndex="2" GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Period:"
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Pays:"
                                                                        GridPane.hgrow="ALWAYS" GridPane.rowIndex="3"
                                                                        GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Ruler:"
-                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="4"
-                                                                       GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Value:"
+                                                                <Label prefHeight="17.0" prefWidth="83.0"
+                                                                       text="Période:" GridPane.hgrow="ALWAYS"
+                                                                       GridPane.rowIndex="4" GridPane.vgrow="ALWAYS"/>
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Type:"
                                                                        GridPane.hgrow="ALWAYS" GridPane.rowIndex="5"
                                                                        GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Year:"
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Valeur:"
                                                                        GridPane.hgrow="ALWAYS" GridPane.rowIndex="6"
                                                                        GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Type:"
+                                                                <Label prefHeight="17.0" prefWidth="83.0" text="Date:"
                                                                        GridPane.hgrow="ALWAYS" GridPane.rowIndex="7"
                                                                        GridPane.vgrow="ALWAYS"/>
                                                                 <Label prefHeight="17.0" prefWidth="83.0" text="Series"
                                                                        GridPane.hgrow="ALWAYS" GridPane.rowIndex="8"
                                                                        GridPane.vgrow="ALWAYS"/>
                                                                 <Label prefHeight="17.0" prefWidth="83.0"
-                                                                       text="Subject:" GridPane.hgrow="ALWAYS"
+                                                                       text="Référence:" GridPane.hgrow="ALWAYS"
                                                                        GridPane.rowIndex="9" GridPane.vgrow="ALWAYS"/>
                                                                 <TextField GridPane.columnIndex="1"/>
                                                                 <TextField GridPane.columnIndex="1"
@@ -111,7 +103,7 @@
                                                                 <TextField GridPane.columnIndex="1"
                                                                            GridPane.rowIndex="3"/>
                                                                 <TextField GridPane.columnIndex="1"
-                                                                           GridPane.rowIndex="6"/>
+                                                                           GridPane.rowIndex="4"/>
                                                                 <TextField GridPane.columnIndex="1"
                                                                            GridPane.rowIndex="7"/>
                                                                 <TextField GridPane.columnIndex="1"
@@ -119,9 +111,9 @@
                                                                 <TextField GridPane.columnIndex="1"
                                                                            GridPane.rowIndex="9"/>
                                                                 <TextField GridPane.columnIndex="1"
-                                                                           GridPane.rowIndex="4"/>
+                                                                           GridPane.rowIndex="5"/>
                                                                 <GridPane GridPane.columnIndex="1"
-                                                                          GridPane.rowIndex="5">
+                                                                          GridPane.rowIndex="6">
                                                                     <columnConstraints>
                                                                         <ColumnConstraints hgrow="SOMETIMES"
                                                                                            maxWidth="150.0"
@@ -160,80 +152,6 @@
                                             <VBox.margin>
                                                 <Insets bottom="20.0" top="10.0"/>
                                             </VBox.margin>
-                                        </TitledPane>
-                                        <TitledPane animated="false" prefHeight="325.0" prefWidth="500.0" text="Status">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
-                                                            prefWidth="200.0">
-                                                    <children>
-                                                        <GridPane layoutX="40.0" layoutY="40.0" prefHeight="263.0"
-                                                                  prefWidth="438.0" AnchorPane.bottomAnchor="6.0"
-                                                                  AnchorPane.leftAnchor="30.0"
-                                                                  AnchorPane.rightAnchor="30.0"
-                                                                  AnchorPane.topAnchor="6.0">
-                                                            <columnConstraints>
-                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0"
-                                                                                   minWidth="10.0" prefWidth="103.0"/>
-                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0"
-                                                                                   minWidth="10.0" prefWidth="335.0"/>
-                                                            </columnConstraints>
-                                                            <rowConstraints>
-                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
-                                                                                vgrow="SOMETIMES"/>
-                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
-                                                                                vgrow="SOMETIMES"/>
-                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
-                                                                                vgrow="SOMETIMES"/>
-                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
-                                                                                vgrow="SOMETIMES"/>
-                                                                <RowConstraints minHeight="10.0" prefHeight="20.0"
-                                                                                vgrow="SOMETIMES"/>
-                                                                <RowConstraints maxHeight="31.0" minHeight="0.0"
-                                                                                prefHeight="26.0" vgrow="SOMETIMES"/>
-                                                                <RowConstraints maxHeight="60.0" minHeight="10.0"
-                                                                                prefHeight="41.0" vgrow="SOMETIMES"/>
-                                                            </rowConstraints>
-                                                            <children>
-                                                                <Label prefHeight="17.0" prefWidth="105.0"
-                                                                       text="Status:" GridPane.hgrow="ALWAYS"
-                                                                       GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="105.0" text="Grade:"
-                                                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"
-                                                                       GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="104.0"
-                                                                       text="Format:" GridPane.hgrow="ALWAYS"
-                                                                       GridPane.rowIndex="2" GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="107.0"
-                                                                       text="Condition:" GridPane.hgrow="ALWAYS"
-                                                                       GridPane.rowIndex="3" GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="106.0"
-                                                                       text="Quantity:" GridPane.hgrow="ALWAYS"
-                                                                       GridPane.rowIndex="4" GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="102.0"
-                                                                       text="Defect:" GridPane.hgrow="ALWAYS"
-                                                                       GridPane.rowIndex="5" GridPane.vgrow="ALWAYS"/>
-                                                                <Label prefHeight="17.0" prefWidth="104.0"
-                                                                       text="Description:" GridPane.hgrow="ALWAYS"
-                                                                       GridPane.rowIndex="6" GridPane.vgrow="ALWAYS"/>
-                                                                <TextField GridPane.columnIndex="1"/>
-                                                                <TextField GridPane.columnIndex="1"
-                                                                           GridPane.rowIndex="1"/>
-                                                                <TextField GridPane.columnIndex="1"
-                                                                           GridPane.rowIndex="2"/>
-                                                                <TextField GridPane.columnIndex="1"
-                                                                           GridPane.rowIndex="3"/>
-                                                                <TextField GridPane.columnIndex="1"
-                                                                           GridPane.rowIndex="4"/>
-                                                                <TextField GridPane.columnIndex="1"
-                                                                           GridPane.rowIndex="5"/>
-                                                                <TextField prefHeight="47.0" prefWidth="325.0"
-                                                                           GridPane.columnIndex="1"
-                                                                           GridPane.rowIndex="6"/>
-                                                            </children>
-                                                        </GridPane>
-                                                    </children>
-                                                </AnchorPane>
-                                            </content>
                                         </TitledPane>
                                     </children>
                                 </VBox>

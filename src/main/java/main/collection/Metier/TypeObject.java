@@ -13,6 +13,12 @@ public class TypeObject {
         this.libelle = libelle;
     }
 
+    public TypeObject(Integer id, String libelle, String imagePath) {
+        this.id = id;
+        this.libelle = libelle;
+        this.imagePath = imagePath;
+    }
+
     public TypeObject(String libelle) {
         this.libelle = libelle;
     }
@@ -43,5 +49,14 @@ public class TypeObject {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    @Override
+    public String toString() {
+        return "type_objet{" +
+                "id=" + id +
+                ", libelle_type=" + libelle +
+                ", imagePath='" + imagePath + '\'' +
+                '}';
     }
 }

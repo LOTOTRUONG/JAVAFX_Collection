@@ -91,19 +91,6 @@ public class PaneAttributModify implements Initializable {
         }
     }
 
-    public void addNewAttribut(ActionEvent actionEvent) {
-        //create a new attribut with a defeut editable name
-        Attribut newAttribut = new Attribut("Entrez le libelle");
-        //add the new Attribut to the listview
-        attributeListView.getItems().add(newAttribut);
-
-        //Select the new item to make it editable
-        attributeListView.getSelectionModel().select(newAttribut);
-        attributeListView.edit(attributeListView.getItems().size() - 1);
-
-
-    }
-
     public void deleteSelectedAttribut(ActionEvent actionEvent) {
         // Get the selected item from the ListView
         Attribut selectedAttribut = attributeListView.getSelectionModel().getSelectedItem();

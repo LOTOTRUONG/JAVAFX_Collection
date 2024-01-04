@@ -16,10 +16,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import main.collection.DAO.PhotoDAO;
 import main.collection.DAO.TypeObjectDAO;
 import main.collection.Metier.Attribut;
-import main.collection.Metier.Photo;
 import main.collection.Metier.TypeObject;
 
 import java.io.File;
@@ -37,7 +35,6 @@ public class PaneTypeObjetModifyController implements Initializable {
     @FXML
     public ScrollPane scrollPane;
     private final TypeObjectDAO typeObjectDAO = new TypeObjectDAO();
-    private final PhotoDAO photoDAO = new PhotoDAO();
     private TypeObject selectedTypeObject;
     private ModificationSceneCallBack paneTypeObjetModifyControllerCallback;
 
@@ -85,14 +82,10 @@ public class PaneTypeObjetModifyController implements Initializable {
         // Set modifyCollectionTextField to the text of the clicked card
         modifyCollectionTextField.setText(typeObject.getLibelle());
         // Set modifyCollectionImage to the image of the clicked card
-        int imageId = typeObjectDAO.getImageIdByTypeId(typeObject.getId());
-        if (imageId != 0) {
-            PhotoDAO photoDAO = new PhotoDAO();
-            String imagePath = photoDAO.getPhotoPathById(imageId);
+        String imagePath = typeObjectDAO.getImageByTypeId(typeObject.getId());
             if (imagePath != null) {
                 modifyCollectionImage.setImage(new Image(imagePath));
             }
-        }
         // Load and display attributs for the selected TypeObject
         loadAttributsForTypeObject(typeObject);
     }
@@ -112,16 +105,6 @@ public class PaneTypeObjetModifyController implements Initializable {
             try {
                 Image image = new Image(file.toURI().toString());
                 modifyCollectionImage.setImage(image);
-                // Save the selected image path to the database
-                if (selectedTypeObject != null) {
-                    int imageId = typeObjectDAO.getImageIdByTypeId(selectedTypeObject.getId());
-                    if (imageId != -1) {
-                        Photo photo = new Photo();
-                        photo.setId(imageId);
-                        photo.setImagePath(modifyCollectionImage.getImage().getUrl());
-                        photoDAO.update(photo);
-                    }
-                }
             } catch (Exception exception) {
                 showAlert("Error", "Failed to load the selected image");
                 exception.printStackTrace();
@@ -196,10 +179,16 @@ public class PaneTypeObjetModifyController implements Initializable {
         if (selectedTypeObject != null) {
             // Save the changes to the libelle_type in the typeObjectDAO
             selectedTypeObject.setLibelle(modifyCollectionTextField.getText());
+            // Check if modifyCollectionImage has a non-null image
+            if (modifyCollectionImage.getImage() != null) {
+                selectedTypeObject.setImagePath(modifyCollectionImage.getImage().getUrl());
+            }
             typeObjectDAO.update(selectedTypeObject);
         }
         showAlert("Success", "Changes saved successfully");
 
+        // Reload data after saving changes
+        loadDatafromDatabase();
         // Trigger the update of the collection view in the main controller
         if (paneTypeObjetModifyControllerCallback != null) {
             paneTypeObjetModifyControllerCallback.onModificationSceneClosed();
@@ -213,18 +202,6 @@ public class PaneTypeObjetModifyController implements Initializable {
                 showAlert("Success", "TypeObject deleted successfully");
             } else {
                 showAlert("Error", "Failed to delete TypeObject");
-            }
-
-            // Delete the associated Photo
-            int imageId = typeObjectDAO.getImageIdByTypeId(selectedTypeObject.getId());
-            if (imageId != -1) {
-                Photo photo = new Photo();
-                photo.setId(imageId);
-                if (photoDAO.delete(photo)) {
-                    showAlert("Success", "Associated Photo deleted successfully");
-                } else {
-                    showAlert("Error", "Failed to delete Associated Photo");
-                }
             }
 
             // Trigger the update of the collection view in the main controller

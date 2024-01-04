@@ -13,10 +13,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import main.collection.DAO.AttributDAO;
-import main.collection.DAO.PhotoDAO;
 import main.collection.DAO.TypeObjectDAO;
 import main.collection.Metier.Attribut;
-import main.collection.Metier.Photo;
 import main.collection.Metier.TypeObject;
 
 import java.io.File;
@@ -86,10 +84,6 @@ public class PaneTypeObjetNewController {
                     typeObject.setLibelle(libelle);
             typeObject.setImagePath(imagePath);
                     (new TypeObjectDAO()).insert(typeObject);
-
-            Photo photo = new Photo();
-            photo.setImagePath(imagePath);
-            (new PhotoDAO()).insert(photo);
             showAlert("Success", "The new collection has been added successfully.");
 
                     //close Scene after success
@@ -116,8 +110,8 @@ public class PaneTypeObjetNewController {
     }
 
     private boolean isImagePathExist(String imagePath) {
-        PhotoDAO photoDAO = new PhotoDAO();
-        ArrayList<Photo> existingObjects = photoDAO.getAll();
+        TypeObjectDAO typeObjectDAO = new TypeObjectDAO();
+        ArrayList<TypeObject> existingObjects = typeObjectDAO.getAll();
 
         //Check if any existing libelle_type(both uppercase and lowercase)
         return existingObjects.stream().anyMatch(obj -> obj.getImagePath().equalsIgnoreCase(imagePath));

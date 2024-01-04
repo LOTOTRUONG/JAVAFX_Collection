@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import main.collection.DAO.PhotoDAO;
 import main.collection.DAO.TypeObjectDAO;
 import main.collection.Metier.TypeObject;
 
@@ -17,20 +16,13 @@ public class CardTypeObjetController {
 
     public void setData(TypeObject typeObject) {
         TypeObjectDAO typeObjectDAO = new TypeObjectDAO();
-        int imageId = typeObjectDAO.getImageIdByTypeId(typeObject.getId());
-
-        if (imageId != -1) {
-            PhotoDAO photoDAO = new PhotoDAO();
-            String imagePath = photoDAO.getPhotoPathById(imageId);
-
+        String imagePath = typeObjectDAO.getImageByTypeId(typeObject.getId());
             if (imagePath != null) {
                 Image image = new Image(imagePath);
                 iconCollectionImage.setImage(image);
             }
-        }
-
-
         nameCollectionLabel.setText(typeObject.getLibelle());
+
     }
 
 }

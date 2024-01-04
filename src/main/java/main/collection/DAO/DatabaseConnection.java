@@ -13,7 +13,7 @@ public class DatabaseConnection {
 
     public static Connection getConnection() {
         try {
-            String dbURL = "jdbc:sqlserver://localhost:1433; database = SML";
+            String dbURL = "jdbc:sqlserver://localhost:1435; database = SML";
             String user = "sa";
             String password = "sml@123456";
             connection = DriverManager.getConnection(dbURL, user, password);
