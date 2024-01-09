@@ -96,7 +96,7 @@ public class PaneApplicationController implements Initializable, ModificationSce
     }
 
     private void handleVBoxClick(TypeObject typeObject) {
-        if ("pièce".equalsIgnoreCase(typeObject.getLibelle())) {
+        if ("pièce".equalsIgnoreCase(typeObject.getLibelle()) || "pièces".equalsIgnoreCase(typeObject.getLibelle()) || "piece".equalsIgnoreCase(typeObject.getLibelle()) || "pieces".equalsIgnoreCase(typeObject.getLibelle())) {
             try {
                 Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeObjet/Coin/CoinCollection.fxml"))).load();
                 Stage homeStage = new Stage();
@@ -106,7 +106,7 @@ public class PaneApplicationController implements Initializable, ModificationSce
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
-        } else if ("billet".equalsIgnoreCase(typeObject.getLibelle())) {
+        } else if ("billet".equalsIgnoreCase(typeObject.getLibelle()) || "billets".equalsIgnoreCase(typeObject.getLibelle())) {
             try {
                 Parent homeRoot = (new FXMLLoader(getClass().getResource("/TypeObjet/Book/BookCollection.fxml"))).load();
                 Stage homeStage = new Stage();

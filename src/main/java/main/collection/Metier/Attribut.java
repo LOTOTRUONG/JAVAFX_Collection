@@ -1,5 +1,6 @@
 package main.collection.Metier;
 
+
 public class Attribut {
 
     private Integer id;
@@ -14,6 +15,11 @@ public class Attribut {
     public Attribut(String libelle) {
         this.libelle = libelle;
     }
+
+    public Attribut() {
+
+    }
+
 
     public Attribut(String libelle, TypeObject typeObject) {
         this.libelle = libelle;

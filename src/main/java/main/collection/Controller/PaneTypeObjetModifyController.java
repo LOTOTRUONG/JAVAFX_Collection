@@ -16,13 +16,16 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import main.collection.DAO.AttributDAO;
 import main.collection.DAO.TypeObjectDAO;
 import main.collection.Metier.Attribut;
 import main.collection.Metier.TypeObject;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -37,15 +40,21 @@ public class PaneTypeObjetModifyController implements Initializable {
     private final TypeObjectDAO typeObjectDAO = new TypeObjectDAO();
     private TypeObject selectedTypeObject;
     private ModificationSceneCallBack paneTypeObjetModifyControllerCallback;
+    private static PaneTypeObjetModifyController instance;
 
     @FXML
     private ListView<Attribut> attributListView;
+    @FXML
+    private CheckBox sortingCheckBox;
+    @FXML
+    private Button modifyAttributButton;
+    private List<Attribut> initialOrder;
 
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadDatafromDatabase();
+    public static PaneTypeObjetModifyController getInstance() {
+        if (instance == null) {
+            instance = new PaneTypeObjetModifyController();
+        }
+        return instance;
     }
 
     public void setCallback(ModificationSceneCallBack callback) {
@@ -114,9 +123,19 @@ public class PaneTypeObjetModifyController implements Initializable {
 
     //load list attributes linked with type of object
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadDatafromDatabase();
+        sortingCheckBox.setOnAction(this::handleSortingCheckBox);
+    }
+
     private void loadAttributsForTypeObject(TypeObject typeObject) {
         attributListView.getItems().clear();
         List<String> attributs = typeObjectDAO.getAttributsByTypeObjectId(typeObject);
+        //save the initial order
+        initialOrder = attributs.stream().map(Attribut::new).collect(Collectors.toList());
+        //sort attributs alphabetically
+        //attributs.sort(Comparator.naturalOrder());
         for (String attribut : attributs) {
             Attribut attributObject = new Attribut(attribut); // Assuming Attribut has a constructor that takes a String
             attributListView.getItems().add(attributObject);
@@ -136,22 +155,84 @@ public class PaneTypeObjetModifyController implements Initializable {
         });
     }
 
+    //Sorting the attribut
+    public void handleSortingCheckBox(ActionEvent actionEvent) {
+        boolean isChecked = sortingCheckBox.isSelected();
+
+        // Sort the items based on the checkbox state
+        if (isChecked) {
+            // Sort in ascending order
+            attributListView.getItems().sort(Comparator.comparing(Attribut::getLibelle));
+        } else {
+            attributListView.getItems().setAll(initialOrder);
+
+        }
+    }
 
     //modify the list of attribut
-    public void openModifyAttribut() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneAttributModify.fxml"));
-            Parent homeRoot = loader.load();
-            PaneAttributModify attributModifyController = loader.getController();
-            List<String> libelleList = attributListView.getItems().stream().map(Attribut::getLibelle).collect(Collectors.toList());
-            attributModifyController.setAttributList(libelleList);
-            Stage homeStage = new Stage();
-            homeStage.setTitle("Modify Attribute Scene");
-            homeStage.setScene(new Scene(homeRoot));
-            homeStage.show();
-        } catch (Exception exception) {
-            exception.printStackTrace();
+    public void modifyAttribut() {
+        //get the selected items from the ListView
+        Attribut selectedAttribut = attributListView.getSelectionModel().getSelectedItem();
+        //Check if an items is selected
+        if (selectedAttribut != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneAttributModify.fxml"));
+                Parent homeRoot = loader.load();
+                //access controller
+                PaneAttributModifyController paneAttributModify = loader.getController();
+                paneAttributModify.setParentController(this);
+                paneAttributModify.setOriginalLabel(selectedAttribut.getLibelle());
+                Stage modifyStage = new Stage();
+                modifyStage.setTitle("Modify Attribute Scene");
+                modifyStage.setScene(new Scene(homeRoot));
+                modifyStage.show();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
         }
+    }
+
+    public Attribut getSelectedAttribut() {
+        return attributListView.getSelectionModel().getSelectedItem();
+    }
+
+    public void updateAttributLabel(String originalLabel, String modifiedLabel) {
+        //iterate through the items in the attributListView
+        for (Attribut attribut : attributListView.getItems()) {
+            if (attribut.getLibelle().equals(originalLabel)) {
+                //update the label with the modifiedLabel
+                attribut.setLibelle(modifiedLabel);
+                // Update database
+                AttributDAO attributDAO = new AttributDAO();
+                attributDAO.update(attribut);
+                //Refresh the attributListView to reflect the changes
+                attributListView.refresh();
+                break;
+            }
+        }
+    }
+
+    public void deleteSelectedAttribut() {
+        // Get the selected item from the ListView
+        Attribut selectedAttribut = attributListView.getSelectionModel().getSelectedItem();
+
+        // Check if an item is selected
+        if (selectedAttribut != null) {
+            boolean confirmed = showAlert("Confirmation Dialog", "Are you sure you want to delete the selected attribute?");
+            if (confirmed) {
+                // User confirmed, proceed with deletion
+                attributListView.getItems().remove(selectedAttribut);
+
+                // Optionally, update the database or perform any other necessary actions
+                // attributDAO.delete(selectedAttribut);
+            }
+        } else {
+            showAlert("Error", "No attribute selected for deletion");
+        }
+    }
+
+    public void addNewAttribute(Attribut newAttribut) {
+        attributListView.getItems().add(newAttribut);
     }
 
     public void openAjouterAttribut() {
@@ -159,19 +240,15 @@ public class PaneTypeObjetModifyController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/collection/PaneAttributAjouter.fxml"));
             Parent homeRoot = loader.load();
             //access controller
-            PaneAttributAjouter paneAttributAjouter = loader.getController();
+            PaneAttributAjouterController paneAttributAjouter = loader.getController();
             paneAttributAjouter.setParentController(this);
-            Stage homeStage = new Stage();
-            homeStage.setTitle("Ajouter Attribute Scene");
-            homeStage.setScene(new Scene(homeRoot));
-            homeStage.show();
+            Stage ajouterStage = new Stage();
+            ajouterStage.setTitle("Ajouter Attribute Scene");
+            ajouterStage.setScene(new Scene(homeRoot));
+            ajouterStage.show();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-    }
-
-    public void addNewAttribute(Attribut newAttribut) {
-        attributListView.getItems().add(newAttribut);
     }
 
     //button with function: save, delete and cancel
@@ -193,6 +270,10 @@ public class PaneTypeObjetModifyController implements Initializable {
         if (paneTypeObjetModifyControllerCallback != null) {
             paneTypeObjetModifyControllerCallback.onModificationSceneClosed();
         }
+    }
+
+    public ListView<Attribut> getAttributListView() {
+        return attributListView;
     }
 
     public void deleteTypeObjet() {
@@ -220,11 +301,19 @@ public class PaneTypeObjetModifyController implements Initializable {
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
-    private void showAlert(String title, String content) {
+
+    private boolean showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(content);
-        alert.showAndWait().orElse(ButtonType.CANCEL);
+
+        // Show the alert and wait for the user's response
+        Optional<ButtonType> result = alert.showAndWait();
+
+        // Return true if the user clicked OK, false otherwise
+        return result.isPresent() && result.get() == ButtonType.OK;
     }
+
+
 }

@@ -33,72 +33,59 @@
                                 </Label>
                             </children>
                         </AnchorPane>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                            <children>
-                                <SplitPane dividerPositions="0.8388998035363457" orientation="VERTICAL"
-                                           prefHeight="511.0" prefWidth="998.0" styleClass="root"
-                                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                    <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                            <children>
-                                                <SplitPane dividerPositions="0.5442655935613682" prefHeight="466.0"
-                                                           prefWidth="996.0" styleClass="root"
-                                                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                    <items>
-                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0"
-                                                                    prefWidth="100.0">
+                        <SplitPane dividerPositions="0.8884540117416829" orientation="VERTICAL" prefHeight="200.0"
+                                   prefWidth="160.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="1026.0">
+                                    <children>
+                                        <SplitPane dividerPositions="0.4462890625" prefHeight="466.0" prefWidth="996.0"
+                                                   styleClass="root" AnchorPane.bottomAnchor="0.0"
+                                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                   AnchorPane.topAnchor="0.0">
+                                            <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0"
+                                                            prefWidth="100.0" SplitPane.resizableWithParent="false">
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="422.0" prefWidth="553.0"
+                                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                             <children>
-                                                                <GridPane alignment="CENTER" layoutX="50.0"
-                                                                          layoutY="41.0" prefHeight="342.0"
-                                                                          prefWidth="421.0"
-                                                                          AnchorPane.bottomAnchor="40.0"
-                                                                          AnchorPane.leftAnchor="50.0"
-                                                                          AnchorPane.rightAnchor="50.0"
-                                                                          AnchorPane.topAnchor="40.0">
-                                                                    <columnConstraints>
-                                                                        <ColumnConstraints halignment="CENTER"
-                                                                                           hgrow="ALWAYS"
-                                                                                           maxWidth="205.0"
-                                                                                           minWidth="10.0"
-                                                                                           prefWidth="130.0"/>
-                                                                        <ColumnConstraints halignment="CENTER"
-                                                                                           hgrow="ALWAYS"
-                                                                                           maxWidth="321.0"
-                                                                                           minWidth="10.0"
-                                                                                           prefWidth="291.0"/>
-                                                                    </columnConstraints>
-                                                                    <rowConstraints>
-                                                                        <RowConstraints maxHeight="165.0"
-                                                                                        minHeight="10.0"
-                                                                                        prefHeight="56.0"
-                                                                                        valignment="CENTER"
-                                                                                        vgrow="ALWAYS"/>
-                                                                        <RowConstraints maxHeight="295.0"
-                                                                                        minHeight="10.0"
-                                                                                        prefHeight="286.0"
-                                                                                        valignment="CENTER"
-                                                                                        vgrow="ALWAYS"/>
-                                                                    </rowConstraints>
+                                                                <HBox alignment="CENTER" prefHeight="100.0"
+                                                                      prefWidth="200.0">
                                                                     <children>
                                                                         <Label alignment="CENTER"
                                                                                contentDisplay="CENTER" prefHeight="40.0"
                                                                                prefWidth="130.0" styleClass="label_nom"
-                                                                               text="Libelle de Collection:"/>
+                                                                               text="Libelle de Collection:">
+                                                                            <HBox.margin>
+                                                                                <Insets right="40.0"/>
+                                                                            </HBox.margin>
+                                                                        </Label>
+                                                                        <TextField fx:id="modifyCollectionTextField"
+                                                                                   alignment="CENTER"
+                                                                                   promptText="Veuillez entrer le nouveau nom"/>
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets top="20.0"/>
+                                                                    </VBox.margin>
+                                                                </HBox>
+                                                                <HBox alignment="CENTER" prefHeight="300.0"
+                                                                      prefWidth="554.0">
+                                                                    <children>
                                                                         <Label alignment="CENTER"
                                                                                contentDisplay="CENTER" prefHeight="40.0"
                                                                                prefWidth="130.0" styleClass="label_nom"
-                                                                               text="Icône de collection:"
-                                                                               GridPane.rowIndex="1"/>
+                                                                               text="Icône de collection:">
+                                                                            <HBox.margin>
+                                                                                <Insets right="30.0"/>
+                                                                            </HBox.margin>
+                                                                        </Label>
                                                                         <Button fx:id="modifyCollectionButton"
                                                                                 alignment="CENTER" contentDisplay="TOP"
                                                                                 graphicTextGap="2.0"
                                                                                 mnemonicParsing="false"
                                                                                 onAction="#setModifyCollectionImage"
-                                                                                text="Veuillez choisir l'image"
-                                                                                GridPane.columnIndex="1"
-                                                                                GridPane.rowIndex="1">
+                                                                                text="Veuillez choisir l'image">
                                                                             <graphic>
                                                                                 <ImageView fx:id="modifyCollectionImage"
                                                                                            fitHeight="200.0"
@@ -111,102 +98,119 @@
                                                                                 </ImageView>
                                                                             </graphic>
                                                                         </Button>
-                                                                        <TextField fx:id="modifyCollectionTextField"
-                                                                                   promptText="Veuillez entrer le nouveau nom"
-                                                                                   GridPane.columnIndex="1"/>
                                                                     </children>
-                                                                </GridPane>
-                                                            </children>
-                                                        </AnchorPane>
-                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="464.0"
-                                                                    prefWidth="309.0">
-                                                            <children>
-                                                                <VBox alignment="CENTER" prefHeight="422.0"
-                                                                      prefWidth="463.0" AnchorPane.bottomAnchor="0.0"
-                                                                      AnchorPane.leftAnchor="0.0"
-                                                                      AnchorPane.rightAnchor="0.0"
-                                                                      AnchorPane.topAnchor="0.0">
+                                                                </HBox>
+                                                                <HBox alignment="CENTER" prefHeight="79.0"
+                                                                      prefWidth="1024.0">
                                                                     <children>
-                                                                        <ListView fx:id="attributListView"
-                                                                                  prefHeight="411.0" prefWidth="463.0"
-                                                                                  styleClass="root" VBox.vgrow="ALWAYS">
-                                                                            <VBox.margin>
-                                                                                <Insets top="20.0"/>
-                                                                            </VBox.margin>
-                                                                        </ListView>
-                                                                        <HBox alignment="CENTER" prefHeight="100.0"
-                                                                              prefWidth="200.0">
-                                                                            <children>
-                                                                                <Button fx:id="ajouterAttributButton"
-                                                                                        alignment="CENTER"
-                                                                                        contentDisplay="CENTER"
-                                                                                        mnemonicParsing="false"
-                                                                                        onAction="#openAjouterAttribut"
-                                                                                        text="Ajouter Attribute"
-                                                                                        HBox.hgrow="ALWAYS">
-                                                                                    <HBox.margin>
-                                                                                        <Insets right="10.0"/>
-                                                                                    </HBox.margin>
-                                                                                </Button>
-                                                                                <Button fx:id="modifyAttributButton"
-                                                                                        alignment="CENTER"
-                                                                                        contentDisplay="CENTER"
-                                                                                        mnemonicParsing="false"
-                                                                                        onAction="#openModifyAttribut"
-                                                                                        text="Modify Attribute"
-                                                                                        HBox.hgrow="ALWAYS">
-                                                                                    <HBox.margin>
-                                                                                        <Insets left="10.0"/>
-                                                                                    </HBox.margin>
-                                                                                </Button>
-                                                                            </children>
-                                                                            <VBox.margin>
-                                                                                <Insets bottom="10.0" top="10.0"/>
-                                                                            </VBox.margin>
-                                                                        </HBox>
+                                                                        <Button fx:id="saveButton" alignment="CENTER"
+                                                                                contentDisplay="CENTER"
+                                                                                mnemonicParsing="false"
+                                                                                onAction="#saveChange" prefHeight="25.0"
+                                                                                prefWidth="133.0" text="Update"
+                                                                                HBox.hgrow="ALWAYS">
+                                                                            <HBox.margin>
+                                                                                <Insets right="20.0"/>
+                                                                            </HBox.margin>
+                                                                        </Button>
+                                                                        <Button fx:id="deleteButton" alignment="CENTER"
+                                                                                contentDisplay="CENTER"
+                                                                                mnemonicParsing="false"
+                                                                                onAction="#deleteTypeObjet"
+                                                                                prefHeight="25.0" prefWidth="133.0"
+                                                                                text="Supprimer" HBox.hgrow="ALWAYS">
+                                                                            <HBox.margin>
+                                                                                <Insets right="10.0"/>
+                                                                            </HBox.margin>
+                                                                        </Button>
                                                                     </children>
-                                                                </VBox>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="10.0"/>
+                                                                    </VBox.margin>
+                                                                </HBox>
                                                             </children>
-                                                        </AnchorPane>
-                                                    </items>
-                                                </SplitPane>
-                                            </children>
-                                        </AnchorPane>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0"
-                                                    SplitPane.resizableWithParent="false">
-                                            <children>
-                                                <HBox alignment="CENTER" prefHeight="79.0" prefWidth="1024.0"
-                                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                    <children>
-                                                        <Button fx:id="saveButton" alignment="CENTER"
-                                                                contentDisplay="CENTER" mnemonicParsing="false"
-                                                                onAction="#saveChange" prefHeight="25.0"
-                                                                prefWidth="133.0" text="Update" HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets right="10.0"/>
-                                                            </HBox.margin>
-                                                        </Button>
-                                                        <Button fx:id="deleteButton" alignment="CENTER"
-                                                                contentDisplay="CENTER" mnemonicParsing="false"
-                                                                onAction="#deleteTypeObjet" prefHeight="25.0"
-                                                                prefWidth="133.0" text="Supprimer" HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets right="10.0"/>
-                                                            </HBox.margin>
-                                                        </Button>
-                                                        <Button fx:id="cancelButton" alignment="CENTER"
-                                                                contentDisplay="CENTER" mnemonicParsing="false"
-                                                                onAction="#cancelButton" prefHeight="25.0"
-                                                                prefWidth="133.0" text="Annuler" HBox.hgrow="ALWAYS"/>
+                                                        </VBox>
                                                     </children>
-                                                </HBox>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="464.0"
+                                                            prefWidth="309.0">
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="422.0" prefWidth="463.0"
+                                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <children>
+                                                                <CheckBox fx:id="sortingCheckBox" maxHeight="20.0"
+                                                                          maxWidth="60.0" minHeight="20.0"
+                                                                          minWidth="60.0" mnemonicParsing="false"
+                                                                          prefHeight="20.0" prefWidth="60.0"
+                                                                          text="Sort"/>
+                                                                <ListView fx:id="attributListView" prefHeight="422.0"
+                                                                          prefWidth="464.0" styleClass="root"
+                                                                          VBox.vgrow="ALWAYS">
+                                                                    <VBox.margin>
+                                                                        <Insets top="5.0"/>
+                                                                    </VBox.margin>
+                                                                </ListView>
+                                                                <HBox alignment="CENTER" prefHeight="100.0"
+                                                                      prefWidth="200.0">
+                                                                    <children>
+                                                                        <Button fx:id="modifyAttributButton"
+                                                                                alignment="CENTER"
+                                                                                contentDisplay="CENTER"
+                                                                                mnemonicParsing="false"
+                                                                                onAction="#modifyAttribut"
+                                                                                text="Modify Attribute">
+                                                                            <HBox.margin>
+                                                                                <Insets right="10.0"/>
+                                                                            </HBox.margin>
+                                                                        </Button>
+                                                                        <Button fx:id="ajouterAttributButton"
+                                                                                alignment="CENTER"
+                                                                                contentDisplay="CENTER"
+                                                                                mnemonicParsing="false"
+                                                                                onAction="#openAjouterAttribut"
+                                                                                text="Ajouter Attribute"
+                                                                                HBox.hgrow="ALWAYS">
+                                                                            <HBox.margin>
+                                                                                <Insets right="10.0"/>
+                                                                            </HBox.margin>
+                                                                        </Button>
+                                                                        <Button fx:id="deleteAttributButton"
+                                                                                alignment="CENTER"
+                                                                                contentDisplay="CENTER"
+                                                                                mnemonicParsing="false"
+                                                                                onAction="#deleteSelectedAttribut"
+                                                                                text="Supprimer Attribute"/>
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="10.0"/>
+                                                                    </VBox.margin>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </items>
+                                        </SplitPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0"
+                                            SplitPane.resizableWithParent="false">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="1026.0"
+                                              styleClass="dashboard" AnchorPane.bottomAnchor="0.0"
+                                              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                              AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="cancelButton" alignment="CENTER" contentDisplay="CENTER"
+                                                        mnemonicParsing="false" onAction="#cancelButton"
+                                                        prefHeight="25.0" prefWidth="133.0" text="Close"/>
                                             </children>
-                                        </AnchorPane>
-                                    </items>
-                                </SplitPane>
-                            </children>
-                        </AnchorPane>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
                     </items>
                 </SplitPane>
             </items>

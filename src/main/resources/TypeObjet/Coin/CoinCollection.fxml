@@ -299,8 +299,8 @@
                                                                             <tabs>
                                                                                 <Tab text="Coin">
                                                                                     <content>
-                                                                                        <AnchorPane prefHeight="321.0"
-                                                                                                    prefWidth="671.0">
+                                                                                        <AnchorPane prefHeight="389.0"
+                                                                                                    prefWidth="702.0">
                                                                                             <children>
                                                                                                 <HBox prefHeight="400.0"
                                                                                                       prefWidth="767.0"
@@ -547,8 +547,7 @@
                                                                                                                 </AnchorPane>
                                                                                                             </content>
                                                                                                             <HBox.margin>
-                                                                                                                <Insets left="10.0"
-                                                                                                                        right="20.0"/>
+                                                                                                                <Insets/>
                                                                                                             </HBox.margin>
                                                                                                         </TitledPane>
                                                                                                     </children>
@@ -718,7 +717,7 @@
                                                                                 </Tab>
                                                                             </tabs>
                                                                             <HBox.margin>
-                                                                                <Insets bottom="10.0" left="5.0"/>
+                                                                                <Insets bottom="10.0" left="10.0"/>
                                                                             </HBox.margin>
                                                                         </TabPane>
                                                                         <VBox alignment="CENTER" prefHeight="200.0"

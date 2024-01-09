@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="250.0" maxWidth="300.0" minHeight="250.0" minWidth="300.0" prefHeight="250.0"
             prefWidth="300.0" xmlns="http://javafx.com/javafx/21"
-            fx:controller="main.collection.Controller.PaneAttributAjouter">
+            fx:controller="main.collection.Controller.PaneAttributAjouterController">
     <children>
         <VBox alignment="CENTER" maxHeight="250.0" maxWidth="300.0" minHeight="250.0" minWidth="300.0"
               prefHeight="250.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"

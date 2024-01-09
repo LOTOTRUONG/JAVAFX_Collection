@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class AttributDAO extends DAO<Attribut, AttributSearch, Integer> {
 
     @Override
-    public Attribut getByID(Integer integer) {
+    public Attribut getByID(Integer id) {
         return null;
     }
 
@@ -117,4 +117,6 @@ public class AttributDAO extends DAO<Attribut, AttributSearch, Integer> {
             return false;
         }
     }
+
+
 }

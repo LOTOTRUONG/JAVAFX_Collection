@@ -124,11 +124,11 @@ public class TypeObjectDAO extends DAO<TypeObject, TypeObject, Integer> {
     public boolean update(TypeObject object) {
         String updateRequest = "UPDATE type_objet SET libelle_type = ?, imagePath = ? WHERE id_type = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(updateRequest)) {
-                    preparedStatement.setString(1, object.getLibelle());
+            preparedStatement.setString(1, object.getLibelle());
             preparedStatement.setString(2, object.getImagePath().replace("/", File.separator));
-                    preparedStatement.setInt(3, object.getId());
-                    preparedStatement.executeUpdate();
-                    return true;
+            preparedStatement.setInt(3, object.getId());
+            preparedStatement.executeUpdate();
+            return true;
         } catch (SQLException E) {
             E.printStackTrace();
             return false;
