@@ -1,39 +1,53 @@
 package main.collection.Metier;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 public class Attribut {
 
-    private IntegerProperty idAttribut;
+    private Integer id;
+    private String libelle;
+    private TypeObject typeObject;
 
-    private StringProperty libelle_attribut;
-
-    public Attribut(int idAttribut, String libelle_attribut){
-
-        this.idAttribut = new SimpleIntegerProperty(idAttribut);
-        this.libelle_attribut = new SimpleStringProperty(libelle_attribut);
-
+    public Attribut(Integer id, String libelle) {
+        this.id = id;
+        this.libelle = libelle;
     }
 
-    /* NO EMPTY CONSTRUCTOR
-     */
-
-    public IntegerProperty getIdAttribut(){
-        return idAttribut;
+    public Attribut(String libelle) {
+        this.libelle = libelle;
     }
 
-    public StringProperty getLibelleattribut(){
-        return libelle_attribut;
+    public Attribut(String libelle, TypeObject typeObject) {
+        this.libelle = libelle;
+        this.typeObject = typeObject;
     }
 
-    public void setLibelleAttribut(String libelle_attribut){
-        this.libelle_attribut.set(libelle_attribut);
+    public Integer getId() {
+        return id != null ? id : 0;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
+    public String getLibelle() {
 
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public TypeObject getTypeObject() {
+        return typeObject;
+    }
+
+    public void setTypeObject(TypeObject typeObject) {
+        this.typeObject = typeObject;
+    }
+
+    @Override
+    public String toString() {
+        return libelle; // Return the attribute name for meaningful representation
+    }
 
 }

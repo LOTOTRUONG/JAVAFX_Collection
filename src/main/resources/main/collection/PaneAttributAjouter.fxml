@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="250.0" maxWidth="300.0" minHeight="250.0" minWidth="300.0" prefHeight="250.0"
+            prefWidth="300.0" xmlns="http://javafx.com/javafx/21"
+            fx:controller="main.collection.Controller.PaneAttributAjouter">
+    <children>
+        <VBox alignment="CENTER" maxHeight="250.0" maxWidth="300.0" minHeight="250.0" minWidth="300.0"
+              prefHeight="250.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="300.0" minHeight="50.0"
+                       minWidth="300.0" prefHeight="50.0" prefWidth="300.0"
+                       text="Please choose the available attribute"/>
+                <ComboBox fx:id="attributComboBox" maxHeight="25.0" maxWidth="260.0" minHeight="25.0" minWidth="260.0"
+                          prefHeight="25.0" prefWidth="260.0" promptText="Select the attribute">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0"/>
+                    </VBox.margin>
+                </ComboBox>
+                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="300.0" minHeight="50.0"
+                       minWidth="300.0" prefHeight="50.0" prefWidth="300.0"
+                       text="If not  available, &#10;please enter the name of new attribute" textAlignment="CENTER">
+                    <VBox.margin>
+                        <Insets top="10.0"/>
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="attributTextField" maxHeight="25.0" maxWidth="260.0" minHeight="25.0" minWidth="260.0"
+                           prefHeight="25.0" prefWidth="260.0" promptText="Enter the new name">
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0"/>
+                    </VBox.margin>
+                </TextField>
+                <HBox alignment="CENTER" maxHeight="50.0" maxWidth="300.0" minHeight="50.0" minWidth="300.0"
+                      prefHeight="50.0" prefWidth="300.0">
+                    <VBox.margin>
+                        <Insets top="10.0"/>
+                    </VBox.margin>
+                    <children>
+                        <Button fx:id="saveButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="25.0"
+                                maxWidth="75.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false"
+                                onAction="#addNewAttribut" prefHeight="25.0" prefWidth="75.0" text="Save">
+                            <HBox.margin>
+                                <Insets right="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="cancelButton" maxHeight="25.0" maxWidth="75.0" minHeight="25.0" minWidth="75.0"
+                                mnemonicParsing="false" onAction="#setCancelButton" prefHeight="25.0" prefWidth="75.0"
+                                text="Cancel"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

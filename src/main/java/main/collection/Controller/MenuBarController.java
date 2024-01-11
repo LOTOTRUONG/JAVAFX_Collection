@@ -3,11 +3,13 @@ package main.collection.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -20,10 +22,6 @@ public class MenuBarController {
     @FXML
     private AnchorPane mainPane;
 
-    @FXML
-    void exitApplication(ActionEvent event) {
-
-    }
 
     public void setMenuBar(Stage stage, Scene scene) {
         menuBar = (MenuBar) scene.lookup("#mainPane");

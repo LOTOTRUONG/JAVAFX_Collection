@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:id="box" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="260.0" spacing="15.0"
+      style="-fx-background-radius: 15;" styleClass="shadow" stylesheets="@bookCss.css"
+      xmlns="http://javafx.com/javafx/21" fx:controller="TypeObjet.Book.CardController">
+    <children>
+        <ImageView fx:id="bookImage" fitHeight="122.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@example/01.rich%20dad.jpg"/>
+            </image>
+        </ImageView>
+        <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="143.0" spacing="10.0">
+            <children>
+                <Label fx:id="bookName" prefHeight="79.0" prefWidth="244.0" text="RICH DAD &#10;POOR DAD">
+                    <font>
+                        <Font name="System Bold" size="15.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="authorName" prefHeight="40.0" prefWidth="244.0" text="RICH DAD POOR DAD">
+                    <font>
+                        <Font size="11.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="30.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@example/fivestar.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+            <HBox.margin>
+                <Insets bottom="15.0" top="15.0"/>
+            </HBox.margin>
+        </VBox>
+    </children>
+</HBox>

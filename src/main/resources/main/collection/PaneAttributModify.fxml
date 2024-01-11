@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="400.0" maxWidth="300.0" minHeight="400.0" minWidth="300.0" prefHeight="400.0"
+            prefWidth="300.0" xmlns="http://javafx.com/javafx/21"
+            fx:controller="main.collection.Controller.PaneAttributModify">
+    <children>
+        <VBox fillWidth="false" maxHeight="400.0" maxWidth="300.0" minHeight="400.0" minWidth="300.0" prefHeight="400.0"
+              prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <ListView fx:id="attributeListView" editable="true" maxHeight="300.0" maxWidth="300.0" minHeight="300.0"
+                          minWidth="300.0" prefHeight="300.0" prefWidth="300.0"/>
+                <HBox alignment="CENTER_LEFT" maxHeight="50.0" maxWidth="300.0" minHeight="50.0" minWidth="300.0"
+                      prefHeight="50.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <CheckBox fx:id="sortingCheckBox" maxHeight="20.0" maxWidth="60.0" minHeight="20.0"
+                                  minWidth="60.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0"
+                                  text="Sort">
+                            <HBox.margin>
+                                <Insets left="20.0" right="125.0"/>
+                            </HBox.margin>
+                        </CheckBox>
+                        <Button maxHeight="25.0" maxWidth="75.0" minHeight="25.0" minWidth="75.0"
+                                mnemonicParsing="false" onAction="#deleteSelectedAttribut" prefHeight="25.0"
+                                prefWidth="75.0" text="Supprimer">
+                            <HBox.margin>
+                                <Insets right="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <Line endX="300.0"/>
+                <HBox alignment="CENTER_RIGHT" maxHeight="50.0" maxWidth="300.0" minHeight="50.0" minWidth="300.0"
+                      prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Button fx:id="saveButton" maxHeight="25.0" maxWidth="50.0" minHeight="25.0" minWidth="50.0"
+                                mnemonicParsing="false" onAction="#saveChange" prefHeight="25.0" prefWidth="50.0"
+                                text="Save">
+                            <HBox.margin>
+                                <Insets right="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="cancelButton" maxHeight="25.0" maxWidth="75.0" minHeight="25.0" minWidth="75.0"
+                                mnemonicParsing="false" onAction="#cancelButton" prefHeight="25.0" prefWidth="75.0"
+                                text="Cancel">
+                            <HBox.margin>
+                                <Insets right="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

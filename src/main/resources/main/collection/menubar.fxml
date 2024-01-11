@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.input.KeyCodeCombination?>
-<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" minWidth="1280.0" prefHeight="30.0" prefWidth="1280.0"
             xmlns="http://javafx.com/javafx/21" fx:controller="main.collection.Controller.MenuBarController">
     <children>
@@ -14,10 +18,10 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Fichier">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="New"/>
-                        <MenuItem mnemonicParsing="false" text="Open"/>
+                        <MenuItem mnemonicParsing="false" text="Acceuil"/>
+                        <MenuItem mnemonicParsing="false" text="Collection"/>
                         <SeparatorMenuItem mnemonicParsing="false"/>
-                        <MenuItem mnemonicParsing="false" text="Save">
+                        <MenuItem mnemonicParsing="false" text="Enregistrer">
                             <graphic>
                                 <FontAwesomeIconView glyphName="SAVE"/>
                             </graphic>
@@ -26,9 +30,9 @@
                                                     shortcut="UP"/>
                             </accelerator>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" text="Save as"/>
+                        <MenuItem mnemonicParsing="false" text="Enregistrer sous"/>
                         <SeparatorMenuItem mnemonicParsing="false"/>
-                        <MenuItem mnemonicParsing="false" text="Print"/>
+                        <MenuItem mnemonicParsing="false" text="Imprimer"/>
                         <SeparatorMenuItem mnemonicParsing="false"/>
                         <MenuItem fx:id="ReturnMain" mnemonicParsing="false" onAction="#exitApplication" text="Quitter">
                             <graphic>
@@ -37,7 +41,7 @@
                         </MenuItem>
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Collection">
+                <Menu disable="true" mnemonicParsing="false" text="Collection" visible="false">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Add"/>
                         <MenuItem mnemonicParsing="false" text="Edit"/>
@@ -46,7 +50,7 @@
                         <MenuItem mnemonicParsing="false" text="Detele"/>
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="View">
+                <Menu disable="true" mnemonicParsing="false" text="View" visible="false">
                     <items>
                         <Menu mnemonicParsing="false" text="Change view">
                             <items>
@@ -63,7 +67,7 @@
                         </Menu>
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="List">
+                <Menu disable="true" mnemonicParsing="false" text="List" visible="false">
                     <items>
                         <MenuItem mnemonicParsing="false" text="New"/>
                         <MenuItem mnemonicParsing="false" text="Open"/>
@@ -77,8 +81,8 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Aide">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="User Manual"/>
-                        <MenuItem mnemonicParsing="false" text="Check for update"/>
+                        <MenuItem mnemonicParsing="false" text="Manuel de l'Utilisateur"/>
+                        <MenuItem mnemonicParsing="false" text="Vérifier la mise à jour"/>
                     </items>
                 </Menu>
             </menus>

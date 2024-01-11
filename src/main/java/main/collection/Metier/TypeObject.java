@@ -4,11 +4,16 @@ public class TypeObject {
 
     private Integer id;
     private String libelle;
-    private String imageSrc;
+    private String imagePath;
+
 
 
     public TypeObject(Integer id, String libelle) {
         this.id = id;
+        this.libelle = libelle;
+    }
+
+    public TypeObject(String libelle) {
         this.libelle = libelle;
     }
 
@@ -32,11 +37,11 @@ public class TypeObject {
         this.libelle = libelle;
     }
 
-    public String getImageSrc() {
-        return imageSrc;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setImageSrc(String imageSrc) {
-        this.imageSrc = imageSrc;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }
