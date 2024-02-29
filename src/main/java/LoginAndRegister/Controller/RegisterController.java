@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.collection.DAO.DatabaseConnection;
+import main.collection.dao.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.Statement;

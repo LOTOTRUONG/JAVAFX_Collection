@@ -13,13 +13,15 @@ module main.collection {
     exports main.collection;
     exports LoginAndRegister.Controller;
     opens LoginAndRegister.Controller to javafx.fxml;
-    exports main.collection.Controller;
-    opens main.collection.Controller to javafx.fxml;
-    exports TypeObjet.Book;
-    opens TypeObjet.Book to javafx.fxml;
-    exports TypeObjet.Coin;
-    opens TypeObjet.Coin to javafx.fxml;
-    exports main.collection.DAO;
-    opens main.collection.DAO to javafx.fxml;
+    exports main.collection.controller;
+    opens main.collection.controller to javafx.fxml;
+    exports typeobjet.book;
+    opens typeobjet.book to javafx.fxml;
+    exports typeobjet.coin;
+    opens typeobjet.coin to javafx.fxml;
+    exports main.collection.dao;
+    opens main.collection.dao to javafx.fxml;
+    exports typeobjet.coin.controller;
+    opens typeobjet.coin.controller to javafx.fxml;
 
 }

@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="720.0" prefWidth="1280.0"
+            xmlns="http://javafx.com/javafx/21" fx:controller="typeobjet.book.BookCollectionController">
+    <center>
+        <AnchorPane prefHeight="720.0" prefWidth="1280.0">
+            <children>
+                <SplitPane dividerPositions="0.07994186046511628" layoutX="-1.0" orientation="VERTICAL"
+                           prefHeight="531.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0"
+                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <AnchorPane prefHeight="25.0" prefWidth="1282.0" SplitPane.resizableWithParent="false">
+                            <children>
+                                <SplitPane dividerPositions="0.2296" prefHeight="160.0" prefWidth="1282.0"
+                                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"
+                                                    SplitPane.resizableWithParent="false">
+                                            <children>
+                                                <HBox prefHeight="100.0" prefWidth="1222.0"
+                                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <Label alignment="CENTER" contentDisplay="TOP"
+                                                               graphicTextGap="0.0" prefHeight="36.0" prefWidth="50.0"
+                                                               text="New" textAlignment="CENTER" textOverrun="CLIP"
+                                                               HBox.hgrow="ALWAYS">
+                                                            <graphic>
+                                                                <ImageView fitHeight="28.0" fitWidth="28.0"
+                                                                           pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../../icon/icon_functionbar/newfile.png"/>
+                                                                    </image>
+                                                                    <rotationAxis>
+                                                                        <Point3D/>
+                                                                    </rotationAxis>
+                                                                </ImageView>
+                                                            </graphic>
+                                                            <HBox.margin>
+                                                                <Insets left="20.0" right="10.0" top="2.0"/>
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <Label alignment="CENTER" contentDisplay="TOP"
+                                                               graphicTextGap="0.0" prefHeight="36.0" prefWidth="50.0"
+                                                               text="Open" textAlignment="CENTER" textOverrun="CLIP"
+                                                               HBox.hgrow="ALWAYS">
+                                                            <graphic>
+                                                                <ImageView fitHeight="28.0" fitWidth="28.0"
+                                                                           pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../../icon/icon_functionbar/open.png"/>
+                                                                    </image>
+                                                                    <rotationAxis>
+                                                                        <Point3D/>
+                                                                    </rotationAxis>
+                                                                </ImageView>
+                                                            </graphic>
+                                                            <HBox.margin>
+                                                                <Insets right="10.0" top="2.0"/>
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <Label alignment="CENTER" contentDisplay="TOP"
+                                                               graphicTextGap="0.0" prefHeight="36.0" prefWidth="50.0"
+                                                               text="Save" textAlignment="CENTER" textOverrun="CLIP"
+                                                               HBox.hgrow="ALWAYS">
+                                                            <graphic>
+                                                                <ImageView fitHeight="28.0" fitWidth="28.0"
+                                                                           pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../../icon/icon_functionbar/savefile.png"/>
+                                                                    </image>
+                                                                    <rotationAxis>
+                                                                        <Point3D/>
+                                                                    </rotationAxis>
+                                                                </ImageView>
+                                                            </graphic>
+                                                            <HBox.margin>
+                                                                <Insets right="10.0" top="2.0"/>
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <Label alignment="CENTER" contentDisplay="TOP"
+                                                               graphicTextGap="0.0" prefHeight="36.0" prefWidth="50.0"
+                                                               text="Print" textAlignment="CENTER" textOverrun="CLIP"
+                                                               HBox.hgrow="ALWAYS">
+                                                            <graphic>
+                                                                <ImageView fitHeight="28.0" fitWidth="28.0"
+                                                                           pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../../icon/icon_functionbar/print.png"/>
+                                                                    </image>
+                                                                    <rotationAxis>
+                                                                        <Point3D/>
+                                                                    </rotationAxis>
+                                                                </ImageView>
+                                                            </graphic>
+                                                            <HBox.margin>
+                                                                <Insets top="2.0"/>
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <SplitPane dividerPositions="0.29797979797979796" prefHeight="48.0"
+                                                           prefWidth="983.0" AnchorPane.bottomAnchor="0.0"
+                                                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                           AnchorPane.topAnchor="0.0">
+                                                    <items>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0"
+                                                                    prefWidth="100.0">
+                                                            <children>
+                                                                <HBox prefHeight="46.0" prefWidth="289.0"
+                                                                      AnchorPane.bottomAnchor="0.0"
+                                                                      AnchorPane.leftAnchor="0.0"
+                                                                      AnchorPane.rightAnchor="0.0"
+                                                                      AnchorPane.topAnchor="0.0">
+                                                                    <children>
+                                                                        <Label alignment="CENTER" contentDisplay="TOP"
+                                                                               graphicTextGap="0.0" prefHeight="36.0"
+                                                                               prefWidth="50.0" text="Infor"
+                                                                               textAlignment="CENTER" textOverrun="CLIP"
+                                                                               HBox.hgrow="ALWAYS">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="28.0"
+                                                                                           fitWidth="28.0"
+                                                                                           pickOnBounds="true"
+                                                                                           preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../../icon/icon_functionbar/information.png"/>
+                                                                                    </image>
+                                                                                    <rotationAxis>
+                                                                                        <Point3D/>
+                                                                                    </rotationAxis>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" right="10.0"
+                                                                                        top="2.0"/>
+                                                                            </HBox.margin>
+                                                                        </Label>
+                                                                        <Label alignment="CENTER" contentDisplay="TOP"
+                                                                               graphicTextGap="0.0" prefHeight="36.0"
+                                                                               prefWidth="50.0" text="Statistic"
+                                                                               textAlignment="CENTER" textOverrun="CLIP"
+                                                                               HBox.hgrow="ALWAYS">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="28.0"
+                                                                                           fitWidth="28.0"
+                                                                                           pickOnBounds="true"
+                                                                                           preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../../icon/icon_functionbar/statistic.png"/>
+                                                                                    </image>
+                                                                                    <rotationAxis>
+                                                                                        <Point3D/>
+                                                                                    </rotationAxis>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <HBox.margin>
+                                                                                <Insets right="10.0" top="2.0"/>
+                                                                            </HBox.margin>
+                                                                        </Label>
+                                                                        <Label alignment="CENTER" contentDisplay="TOP"
+                                                                               graphicTextGap="0.0" prefHeight="36.0"
+                                                                               prefWidth="50.0" text="Map"
+                                                                               textAlignment="CENTER" textOverrun="CLIP"
+                                                                               HBox.hgrow="ALWAYS">
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="28.0"
+                                                                                           fitWidth="28.0"
+                                                                                           pickOnBounds="true"
+                                                                                           preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../../icon/icon_functionbar/map.png"/>
+                                                                                    </image>
+                                                                                    <rotationAxis>
+                                                                                        <Point3D/>
+                                                                                    </rotationAxis>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                            <HBox.margin>
+                                                                                <Insets right="10.0" top="2.0"/>
+                                                                            </HBox.margin>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0"
+                                                                    prefWidth="100.0">
+                                                            <children>
+                                                                <HBox layoutY="9.0" prefHeight="37.0" prefWidth="686.0"
+                                                                      AnchorPane.bottomAnchor="0.0"
+                                                                      AnchorPane.leftAnchor="0.0"
+                                                                      AnchorPane.rightAnchor="0.0"
+                                                                      AnchorPane.topAnchor="0.0">
+                                                                    <children>
+                                                                        <MenuButton contentDisplay="TOP"
+                                                                                    graphicTextGap="0.0"
+                                                                                    mnemonicParsing="false"
+                                                                                    prefHeight="47.0" prefWidth="65.0"
+                                                                                    text="View">
+                                                                            <items>
+                                                                                <MenuItem fx:id="viewTable"
+                                                                                          mnemonicParsing="false"
+                                                                                          onAction="#showTableViewPane"
+                                                                                          text="Table View"/>
+                                                                                <MenuItem fx:id="viewIcon"
+                                                                                          mnemonicParsing="false"
+                                                                                          onAction="#showIconViewPane"
+                                                                                          text="Icon  View"/>
+                                                                            </items>
+                                                                            <graphic>
+                                                                                <ImageView fitHeight="22.0"
+                                                                                           fitWidth="22.0"
+                                                                                           pickOnBounds="true"
+                                                                                           preserveRatio="true">
+                                                                                    <image>
+                                                                                        <Image url="@../../icon/icon_functionbar/view.png"/>
+                                                                                    </image>
+                                                                                </ImageView>
+                                                                            </graphic>
+                                                                        </MenuButton>
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </items>
+                                                </SplitPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="636.0" prefWidth="1278.0">
+                            <children>
+                                <SplitPane dividerPositions="0.22962382445141066" prefHeight="636.0" prefWidth="1280.0"
+                                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"
+                                                    SplitPane.resizableWithParent="false">
+                                            <children>
+                                                <TabPane prefHeight="631.0" prefWidth="291.0"
+                                                         tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="0.0"
+                                                         AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                         AnchorPane.topAnchor="0.0">
+                                                    <tabs>
+                                                        <Tab text="Groups">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0"
+                                                                            prefHeight="661.0" prefWidth="227.0">
+                                                                    <children>
+                                                                        <TreeTableView prefHeight="603.0"
+                                                                                       prefWidth="222.0"
+                                                                                       AnchorPane.bottomAnchor="0.0"
+                                                                                       AnchorPane.leftAnchor="0.0"
+                                                                                       AnchorPane.rightAnchor="0.0"
+                                                                                       AnchorPane.topAnchor="0.0">
+                                                                            <columns>
+                                                                                <TreeTableColumn prefWidth="75.0"
+                                                                                                 text="Authors"/>
+                                                                            </columns>
+                                                                            <columnResizePolicy>
+                                                                                <TreeTableView
+                                                                                        fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                                            </columnResizePolicy>
+                                                                        </TreeTableView>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                        <Tab text="Filters">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0"
+                                                                            prefHeight="180.0" prefWidth="200.0">
+                                                                    <children>
+                                                                        <TreeView layoutY="-1.0" prefHeight="598.0"
+                                                                                  prefWidth="219.0"
+                                                                                  AnchorPane.bottomAnchor="0.0"
+                                                                                  AnchorPane.leftAnchor="0.0"
+                                                                                  AnchorPane.rightAnchor="0.0"
+                                                                                  AnchorPane.topAnchor="0.0"/>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                    </tabs>
+                                                </TabPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <SplitPane dividerPositions="0.2503987240829346" layoutX="-2.0"
+                                                           layoutY="-2.0" orientation="VERTICAL" prefHeight="631.0"
+                                                           prefWidth="1054.0" AnchorPane.bottomAnchor="0.0"
+                                                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                           AnchorPane.topAnchor="0.0">
+                                                    <items>
+                                                        <AnchorPane fx:id="changeViewPane" minHeight="0.0"
+                                                                    minWidth="0.0" prefHeight="301.0"
+                                                                    prefWidth="1052.0">
+                                                            <children>
+                                                                <Pane fx:id="tableViewPane" prefHeight="154.0"
+                                                                      prefWidth="978.0" AnchorPane.bottomAnchor="0.0"
+                                                                      AnchorPane.leftAnchor="0.0"
+                                                                      AnchorPane.rightAnchor="0.0"
+                                                                      AnchorPane.topAnchor="0.0">
+                                                                    <children>
+                                                                        <TableView prefHeight="208.0"
+                                                                                   prefWidth="1050.0">
+                                                                            <columns>
+                                                                                <TableColumn prefWidth="468.0"
+                                                                                             text="Title"/>
+                                                                                <TableColumn prefWidth="580.0"
+                                                                                             text="Author"/>
+                                                                            </columns>
+                                                                            <columnResizePolicy>
+                                                                                <TableView
+                                                                                        fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                                            </columnResizePolicy>
+                                                                        </TableView>
+                                                                    </children>
+                                                                </Pane>
+                                                                <ScrollPane fx:id="iconViewPane" prefHeight="154.0"
+                                                                            prefWidth="978.0"
+                                                                            AnchorPane.bottomAnchor="0.0"
+                                                                            AnchorPane.leftAnchor="0.0"
+                                                                            AnchorPane.rightAnchor="0.0"
+                                                                            AnchorPane.topAnchor="0.0">
+                                                                    <content>
+                                                                        <HBox fx:id="cardLayout" alignment="CENTER"
+                                                                              prefHeight="155.0" prefWidth="975.0"
+                                                                              spacing="20.0"/>
+                                                                    </content>
+                                                                </ScrollPane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0"
+                                                                    prefWidth="160.0">
+                                                            <children>
+                                                                <Label layoutX="437.0" layoutY="14.0" text="Title Book">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="12.0"/>
+                                                                    </font>
+                                                                </Label>
+                                                                <HBox layoutX="14.0" layoutY="44.0" prefHeight="394.0"
+                                                                      prefWidth="1017.0" AnchorPane.bottomAnchor="29.0"
+                                                                      AnchorPane.leftAnchor="14.0"
+                                                                      AnchorPane.rightAnchor="19.0"
+                                                                      AnchorPane.topAnchor="44.0">
+                                                                    <children>
+                                                                        <VBox prefHeight="394.0" prefWidth="743.0"
+                                                                              HBox.hgrow="ALWAYS">
+                                                                            <children>
+                                                                                <TitledPane animated="false"
+                                                                                            prefHeight="106.0"
+                                                                                            prefWidth="741.0"
+                                                                                            text="General"
+                                                                                            VBox.vgrow="ALWAYS">
+                                                                                    <content>
+                                                                                        <AnchorPane minHeight="0.0"
+                                                                                                    minWidth="0.0"
+                                                                                                    prefHeight="80.0"
+                                                                                                    prefWidth="727.0">
+                                                                                            <children>
+                                                                                                <GridPane
+                                                                                                        prefHeight="80.0"
+                                                                                                        prefWidth="756.0">
+                                                                                                    <columnConstraints>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="175.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="122.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="283.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="256.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="271.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="144.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="245.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="233.0"/>
+                                                                                                    </columnConstraints>
+                                                                                                    <rowConstraints>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                    </rowConstraints>
+                                                                                                    <children>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="Title:"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Name of book"
+                                                                                                               GridPane.columnIndex="1"/>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="Author:"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Name of author"
+                                                                                                               GridPane.columnIndex="1"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="Purchase Date:"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Date"
+                                                                                                               GridPane.columnIndex="1"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="144.0"
+                                                                                                               text="Subtitle:"
+                                                                                                               GridPane.columnIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Name of subtitle"
+                                                                                                               GridPane.columnIndex="3"/>
+                                                                                                        <Label prefHeight="27.0"
+                                                                                                               prefWidth="150.0"
+                                                                                                               text="Binding:"
+                                                                                                               GridPane.columnIndex="2"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Name of Binding"
+                                                                                                               GridPane.columnIndex="3"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="27.0"
+                                                                                                               prefWidth="150.0"
+                                                                                                               text="Purchase Price:"
+                                                                                                               GridPane.columnIndex="2"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Price of book"
+                                                                                                               GridPane.columnIndex="3"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                    </children>
+                                                                                                </GridPane>
+                                                                                            </children>
+                                                                                        </AnchorPane>
+                                                                                    </content>
+                                                                                    <VBox.margin>
+                                                                                        <Insets bottom="20.0"/>
+                                                                                    </VBox.margin>
+                                                                                </TitledPane>
+                                                                                <TitledPane animated="false"
+                                                                                            prefHeight="106.0"
+                                                                                            prefWidth="741.0"
+                                                                                            text="Publishing"
+                                                                                            VBox.vgrow="ALWAYS">
+                                                                                    <content>
+                                                                                        <AnchorPane minHeight="0.0"
+                                                                                                    minWidth="0.0"
+                                                                                                    prefHeight="77.0"
+                                                                                                    prefWidth="698.0">
+                                                                                            <children>
+                                                                                                <GridPane
+                                                                                                        prefHeight="80.0"
+                                                                                                        prefWidth="756.0">
+                                                                                                    <columnConstraints>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="175.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="122.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="283.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="256.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="271.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="144.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="245.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="233.0"/>
+                                                                                                    </columnConstraints>
+                                                                                                    <rowConstraints>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                    </rowConstraints>
+                                                                                                    <children>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="Publisher:"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Name of publisher"
+                                                                                                               GridPane.columnIndex="1"/>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="Copyright Year:"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Year of copyright"
+                                                                                                               GridPane.columnIndex="1"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="ISBN#:"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Number of ISBN"
+                                                                                                               GridPane.columnIndex="1"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="144.0"
+                                                                                                               text="Edition"
+                                                                                                               GridPane.columnIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Number of edition"
+                                                                                                               GridPane.columnIndex="3"/>
+                                                                                                        <Label prefHeight="27.0"
+                                                                                                               prefWidth="150.0"
+                                                                                                               text="Publication Year:"
+                                                                                                               GridPane.columnIndex="2"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Year of publication"
+                                                                                                               GridPane.columnIndex="3"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="27.0"
+                                                                                                               prefWidth="150.0"
+                                                                                                               text="LCCN#:"
+                                                                                                               GridPane.columnIndex="2"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Number of LCCN"
+                                                                                                               GridPane.columnIndex="3"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="17.0"
+                                                                                                               prefWidth="126.0"
+                                                                                                               text="Pages:"
+                                                                                                               GridPane.rowIndex="3"/>
+                                                                                                        <Label prefHeight="17.0"
+                                                                                                               prefWidth="256.0"
+                                                                                                               text="Number of pages"
+                                                                                                               GridPane.columnIndex="1"
+                                                                                                               GridPane.rowIndex="3"/>
+                                                                                                        <Label prefHeight="17.0"
+                                                                                                               prefWidth="147.0"
+                                                                                                               text="Language:"
+                                                                                                               GridPane.columnIndex="2"
+                                                                                                               GridPane.rowIndex="3"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Name of languages"
+                                                                                                               GridPane.columnIndex="3"
+                                                                                                               GridPane.rowIndex="3"/>
+                                                                                                    </children>
+                                                                                                </GridPane>
+                                                                                            </children>
+                                                                                        </AnchorPane>
+                                                                                    </content>
+                                                                                    <VBox.margin>
+                                                                                        <Insets bottom="20.0"/>
+                                                                                    </VBox.margin>
+                                                                                </TitledPane>
+                                                                                <TitledPane animated="false"
+                                                                                            prefHeight="106.0"
+                                                                                            prefWidth="743.0"
+                                                                                            text="Classification"
+                                                                                            VBox.vgrow="ALWAYS">
+                                                                                    <content>
+                                                                                        <AnchorPane minHeight="0.0"
+                                                                                                    minWidth="0.0"
+                                                                                                    prefHeight="77.0"
+                                                                                                    prefWidth="698.0">
+                                                                                            <children>
+                                                                                                <GridPane
+                                                                                                        prefHeight="80.0"
+                                                                                                        prefWidth="756.0">
+                                                                                                    <columnConstraints>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="175.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="122.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="283.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="256.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="271.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="144.0"/>
+                                                                                                        <ColumnConstraints
+                                                                                                                hgrow="SOMETIMES"
+                                                                                                                maxWidth="245.0"
+                                                                                                                minWidth="10.0"
+                                                                                                                prefWidth="233.0"/>
+                                                                                                    </columnConstraints>
+                                                                                                    <rowConstraints>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                        <RowConstraints
+                                                                                                                minHeight="10.0"
+                                                                                                                prefHeight="30.0"
+                                                                                                                vgrow="SOMETIMES"/>
+                                                                                                    </rowConstraints>
+                                                                                                    <children>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="Genre:"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Name of gendre"
+                                                                                                               GridPane.columnIndex="1"/>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="Series:"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Number of series"
+                                                                                                               GridPane.columnIndex="1"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="28.0"
+                                                                                                               prefWidth="123.0"
+                                                                                                               text="Condition:"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Valeur of condition;"
+                                                                                                               GridPane.columnIndex="1"
+                                                                                                               GridPane.rowIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="144.0"
+                                                                                                               text="Keywords:"
+                                                                                                               GridPane.columnIndex="2"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Name of keywords"
+                                                                                                               GridPane.columnIndex="3"/>
+                                                                                                        <Label prefHeight="27.0"
+                                                                                                               prefWidth="150.0"
+                                                                                                               text="Seriers Number:"
+                                                                                                               GridPane.columnIndex="2"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                        <Label prefHeight="26.0"
+                                                                                                               prefWidth="257.0"
+                                                                                                               text="Number "
+                                                                                                               GridPane.columnIndex="3"
+                                                                                                               GridPane.rowIndex="1"/>
+                                                                                                    </children>
+                                                                                                </GridPane>
+                                                                                            </children>
+                                                                                        </AnchorPane>
+                                                                                    </content>
+                                                                                    <VBox.margin>
+                                                                                        <Insets bottom="20.0"/>
+                                                                                    </VBox.margin>
+                                                                                </TitledPane>
+                                                                            </children>
+                                                                        </VBox>
+                                                                        <ImageView fitHeight="357.0" fitWidth="200.0"
+                                                                                   pickOnBounds="true"
+                                                                                   preserveRatio="true"
+                                                                                   HBox.hgrow="ALWAYS">
+                                                                            <HBox.margin>
+                                                                                <Insets left="60.0"/>
+                                                                            </HBox.margin>
+                                                                            <image>
+                                                                                <Image url="@../../logo/logo.png"/>
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </items>
+                                                </SplitPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <fx:include source="../../main/collection/MenuBar.fxml"/>
+    </top>
+</BorderPane>

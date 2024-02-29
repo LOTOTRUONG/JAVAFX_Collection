@@ -13,7 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import main.collection.DAO.DatabaseConnection;
+import main.collection.dao.DatabaseConnection;
 
 import java.net.URL;
 import java.sql.Connection;

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" maxHeight="150.0" maxWidth="260.0" minHeight="150.0" minWidth="260.0"
       prefHeight="150.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/21"
-      fx:controller="main.collection.Controller.PaneAttributModifyController">
+      fx:controller="main.collection.controller.PaneAttributModifyController">
     <children>
         <TextField fx:id="modifiedAttributTextField" alignment="CENTER" maxHeight="25.0" maxWidth="240.0"
                    minHeight="25.0" minWidth="240.0" prefHeight="25.0" prefWidth="240.0">

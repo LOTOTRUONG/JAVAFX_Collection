@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="563.0" prefWidth="1200.0" styleClass="root"
             stylesheets="@css/applicationCss.css" xmlns="http://javafx.com/javafx/21"
-            fx:controller="main.collection.Controller.PaneTypeObjetModifyController">
+            fx:controller="main.collection.controller.PaneTypeObjetModifyController">
     <children>
         <SplitPane dividerPositions="0.14128256513026052" prefHeight="563.0" prefWidth="1200.0" styleClass="root"
                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"

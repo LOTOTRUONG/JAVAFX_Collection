@@ -4,10 +4,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
-
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="box" alignment="CENTER" prefHeight="118.0" prefWidth="102.0"
       styleClass="labelImage" stylesheets="@css/applicationCss.css" xmlns="http://javafx.com/javafx/21"
-      fx:controller="main.collection.Controller.CardTypeObjetController">
+      fx:controller="main.collection.controller.CardTypeObjetController">
     <children>
         <ImageView fx:id="iconCollectionImage" fitHeight="94.0" fitWidth="101.0" pickOnBounds="true"
                    preserveRatio="true">
