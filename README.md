@@ -1,4 +1,5 @@
 # :file_folder: JAVAFX_SMLCollection
+Branch: Loan 
 
 ## :orange_book: Description de projet
 Projet collectif réalisé lors de leurs études à l'AFPA - Roubaix, cette application permet aux utilisateurs de gérer diverses collections. Plusieurs collections sont disponibles dans le logiciel: collection pièces, collection billet, collection timbres.
